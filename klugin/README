@@ -1,0 +1,8 @@
+Este projeto esta no repositório SVN 
+https://186.215.70.197:51898/repos/klugin
+
+git svn clone https://186.215.70.197:51898/repos/klugin -s
+
+se não funcionar:
+http://victorquinn.com/blog/2012/02/19/fix-git-svn-in-mountain-lion/
+

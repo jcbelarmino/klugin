@@ -1,0 +1,899 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		160BA469178A20D000616B17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDCD1764C85A001ACBE4 /* CoreGraphics.framework */; };
+		160BA46B178A2BEF00616B17 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 160BA46A178A2BEF00616B17 /* libsqlite3.dylib */; };
+		16131A18177D168F0067EFA2 /* Rota.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A15177D168F0067EFA2 /* Rota.m */; };
+		16131A21177D172A0067EFA2 /* KRNovoPontoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A1A177D172A0067EFA2 /* KRNovoPontoViewController.m */; };
+		16131A22177D172A0067EFA2 /* KRPontoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A1C177D172A0067EFA2 /* KRPontoCell.m */; };
+		16131A23177D172A0067EFA2 /* KRPontoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A1E177D172A0067EFA2 /* KRPontoViewController.m */; };
+		16131A24177D172A0067EFA2 /* KRRotaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A20177D172A0067EFA2 /* KRRotaViewController.m */; };
+		16131A29177D1FC50067EFA2 /* KRNovaRotaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A26177D1FC50067EFA2 /* KRNovaRotaViewController.m */; };
+		16131A2A177D1FC50067EFA2 /* KRRotaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A28177D1FC50067EFA2 /* KRRotaCell.m */; };
+		161928F817A00C9D00CC2196 /* PontoRota.m in Sources */ = {isa = PBXBuildFile; fileRef = 161928F717A00C9D00CC2196 /* PontoRota.m */; };
+		163FF5DF178868D3000A7E0B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF01764CB99001ACBE4 /* AVFoundation.framework */; };
+		163FF5E0178868D3000A7E0B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF11764CB99001ACBE4 /* CoreData.framework */; };
+		163FF5E1178868D3000A7E0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF21764CB99001ACBE4 /* CoreLocation.framework */; };
+		163FF5E2178868D3000A7E0B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF31764CB99001ACBE4 /* CoreText.framework */; };
+		163FF5E3178868D3000A7E0B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF41764CB99001ACBE4 /* GLKit.framework */; };
+		163FF5E4178868D3000A7E0B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF51764CB99001ACBE4 /* ImageIO.framework */; };
+		163FF5E5178868D3000A7E0B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF61764CB99001ACBE4 /* libc++.dylib */; };
+		163FF5E6178868D3000A7E0B /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF71764CB99001ACBE4 /* libicucore.dylib */; };
+		163FF5E7178868D3000A7E0B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF81764CB99001ACBE4 /* libz.dylib */; };
+		163FF5E8178868D3000A7E0B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF91764CB99001ACBE4 /* OpenGLES.framework */; };
+		163FF5E9178868D3000A7E0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDFA1764CB99001ACBE4 /* QuartzCore.framework */; };
+		163FF5EA178868D3000A7E0B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDFB1764CB99001ACBE4 /* SystemConfiguration.framework */; };
+		163FF5EE17886AF8000A7E0B /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 163FF5ED17886AF8000A7E0B /* GoogleMaps.bundle */; };
+		1644A25E1797792300BC83C8 /* KlugOrdenaPontosTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1644A25D1797792300BC83C8 /* KlugOrdenaPontosTest.m */; };
+		1644A26117977ECF00BC83C8 /* Ordenador.m in Sources */ = {isa = PBXBuildFile; fileRef = 1644A26017977ECF00BC83C8 /* Ordenador.m */; };
+		164DF39217837BFA0059A06F /* README in Resources */ = {isa = PBXBuildFile; fileRef = 164DF39117837BFA0059A06F /* README */; };
+		1650D68317B13428005F088B /* jingle_teste.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1650D68217B13428005F088B /* jingle_teste.m4a */; };
+		1673D1BC17938A5B0038D692 /* KREditPontoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1673D1BB17938A5B0038D692 /* KREditPontoViewController.m */; };
+		167864A317AA97B800534D41 /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1678649717AA97B800534D41 /* Foursquare2.m */; };
+		167864A417AA97B800534D41 /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 1678649917AA97B800534D41 /* FSRequester.m */; };
+		167864A517AA97B800534D41 /* FSTargetCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 1678649B17AA97B800534D41 /* FSTargetCallback.m */; };
+		167864A617AA97B800534D41 /* FSWebLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1678649D17AA97B800534D41 /* FSWebLogin.m */; };
+		167864A717AA97B800534D41 /* FSWebLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1678649E17AA97B800534D41 /* FSWebLogin.xib */; };
+		167864A817AA97B800534D41 /* pin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1678649F17AA97B800534D41 /* pin2.png */; };
+		167864A917AA97B800534D41 /* pin2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167864A017AA97B800534D41 /* pin2@2x.png */; };
+		167864AA17AA97B800534D41 /* poweredByFoursquare_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 167864A117AA97B800534D41 /* poweredByFoursquare_gray.png */; };
+		167864AB17AA97B800534D41 /* poweredByFoursquare_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167864A217AA97B800534D41 /* poweredByFoursquare_gray@2x.png */; };
+		16A002D4177F921A009D92A8 /* klugrota.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16A002D2177F921A009D92A8 /* klugrota.xcdatamodeld */; };
+		16CB9681177E726C005CB78A /* KlugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB967A177E6F7C005CB78A /* KlugViewController.m */; };
+		16CB9682177E726F005CB78A /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB967C177E6F7C005CB78A /* ActionSheetStringPicker.m */; };
+		16CB9683177E7274005CB78A /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB967E177E6F7C005CB78A /* AbstractActionSheetPicker.m */; };
+		16CB968A177E73A1005CB78A /* UTMConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB9688177E73A1005CB78A /* UTMConverter.m */; };
+		16CBC58B1785B6FF00ADC5D1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CBC58A1785B6FF00ADC5D1 /* SenTestingKit.framework */; };
+		16CBC58C1785B6FF00ADC5D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDC91764C85A001ACBE4 /* UIKit.framework */; };
+		16CBC58D1785B6FF00ADC5D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDCB1764C85A001ACBE4 /* Foundation.framework */; };
+		16CBC5931785B6FF00ADC5D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16CBC5911785B6FF00ADC5D1 /* InfoPlist.strings */; };
+		16CBC5961785B6FF00ADC5D1 /* kluginTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CBC5951785B6FF00ADC5D1 /* kluginTest.m */; };
+		16CFE7B01769E51A00D86B48 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CFE7AF1769E51A00D86B48 /* Storyboard.storyboard */; };
+		16CFE7B21769F64F00D86B48 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 16CFE7B11769F64F00D86B48 /* pin.png */; };
+		16D6EDCA1764C85A001ACBE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDC91764C85A001ACBE4 /* UIKit.framework */; };
+		16D6EDCC1764C85A001ACBE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDCB1764C85A001ACBE4 /* Foundation.framework */; };
+		16D6EDCE1764C85A001ACBE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDCD1764C85A001ACBE4 /* CoreGraphics.framework */; };
+		16D6EDD41764C85A001ACBE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16D6EDD21764C85A001ACBE4 /* InfoPlist.strings */; };
+		16D6EDD61764C85A001ACBE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D6EDD51764C85A001ACBE4 /* main.m */; };
+		16D6EDDA1764C85A001ACBE4 /* KIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D6EDD91764C85A001ACBE4 /* KIAppDelegate.m */; };
+		16D6EDDC1764C85A001ACBE4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D6EDDB1764C85A001ACBE4 /* Default.png */; };
+		16D6EDDE1764C85A001ACBE4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D6EDDD1764C85A001ACBE4 /* Default@2x.png */; };
+		16D6EDE01764C85A001ACBE4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16D6EDDF1764C85A001ACBE4 /* Default-568h@2x.png */; };
+		16D6EDED1764C91C001ACBE4 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDEC1764C91C001ACBE4 /* GoogleMaps.framework */; };
+		16D6EDEF1764CA2B001ACBE4 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 16D6EDEE1764CA2B001ACBE4 /* GoogleMaps.bundle */; };
+		16D6EDFC1764CB99001ACBE4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF01764CB99001ACBE4 /* AVFoundation.framework */; };
+		16D6EDFD1764CB99001ACBE4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF11764CB99001ACBE4 /* CoreData.framework */; };
+		16D6EDFE1764CB99001ACBE4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF21764CB99001ACBE4 /* CoreLocation.framework */; };
+		16D6EDFF1764CB99001ACBE4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF31764CB99001ACBE4 /* CoreText.framework */; };
+		16D6EE001764CB99001ACBE4 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF41764CB99001ACBE4 /* GLKit.framework */; };
+		16D6EE011764CB99001ACBE4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF51764CB99001ACBE4 /* ImageIO.framework */; };
+		16D6EE021764CB99001ACBE4 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF61764CB99001ACBE4 /* libc++.dylib */; };
+		16D6EE031764CB99001ACBE4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF71764CB99001ACBE4 /* libicucore.dylib */; };
+		16D6EE041764CB99001ACBE4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF81764CB99001ACBE4 /* libz.dylib */; };
+		16D6EE051764CB99001ACBE4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF91764CB99001ACBE4 /* OpenGLES.framework */; };
+		16D6EE061764CB99001ACBE4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDFA1764CB99001ACBE4 /* QuartzCore.framework */; };
+		16D6EE071764CB99001ACBE4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDFB1764CB99001ACBE4 /* SystemConfiguration.framework */; };
+		16E3FEE41786F6C8004B4FF8 /* KlugAppDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E3FEE31786F6C8004B4FF8 /* KlugAppDelegateTest.m */; };
+		16E3FEE81786FCCF004B4FF8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDEC1764C91C001ACBE4 /* GoogleMaps.framework */; };
+		16EC920617AD40D200E33FB1 /* KIPorPertoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC920517AD40D200E33FB1 /* KIPorPertoViewController.m */; };
+		16EC920917AD451C00E33FB1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EC920817AD451C00E33FB1 /* MapKit.framework */; };
+		16EC920E17AD4B5A00E33FB1 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC920B17AD4B5A00E33FB1 /* FSConverter.m */; };
+		16EC920F17AD4B5A00E33FB1 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC920D17AD4B5A00E33FB1 /* FSVenue.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16CBC59C1785B71F00ADC5D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16D6EDBE1764C85A001ACBE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16D6EDC51764C85A001ACBE4;
+			remoteInfo = klugin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		160BA46A178A2BEF00616B17 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		16131A14177D168F0067EFA2 /* Rota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rota.h; sourceTree = "<group>"; };
+		16131A15177D168F0067EFA2 /* Rota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rota.m; sourceTree = "<group>"; };
+		16131A19177D172A0067EFA2 /* KRNovoPontoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNovoPontoViewController.h; sourceTree = "<group>"; };
+		16131A1A177D172A0067EFA2 /* KRNovoPontoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNovoPontoViewController.m; sourceTree = "<group>"; };
+		16131A1B177D172A0067EFA2 /* KRPontoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPontoCell.h; sourceTree = "<group>"; };
+		16131A1C177D172A0067EFA2 /* KRPontoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPontoCell.m; sourceTree = "<group>"; };
+		16131A1D177D172A0067EFA2 /* KRPontoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPontoViewController.h; sourceTree = "<group>"; };
+		16131A1E177D172A0067EFA2 /* KRPontoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRPontoViewController.m; sourceTree = "<group>"; };
+		16131A1F177D172A0067EFA2 /* KRRotaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRotaViewController.h; sourceTree = "<group>"; };
+		16131A20177D172A0067EFA2 /* KRRotaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRotaViewController.m; sourceTree = "<group>"; };
+		16131A25177D1FC50067EFA2 /* KRNovaRotaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNovaRotaViewController.h; sourceTree = "<group>"; };
+		16131A26177D1FC50067EFA2 /* KRNovaRotaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNovaRotaViewController.m; sourceTree = "<group>"; };
+		16131A27177D1FC50067EFA2 /* KRRotaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRotaCell.h; sourceTree = "<group>"; };
+		16131A28177D1FC50067EFA2 /* KRRotaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRotaCell.m; sourceTree = "<group>"; };
+		161928F617A00C9D00CC2196 /* PontoRota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PontoRota.h; sourceTree = "<group>"; };
+		161928F717A00C9D00CC2196 /* PontoRota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PontoRota.m; sourceTree = "<group>"; };
+		163FF5ED17886AF8000A7E0B /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		1644A25C1797792300BC83C8 /* KlugOrdenaPontosTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlugOrdenaPontosTest.h; sourceTree = "<group>"; };
+		1644A25D1797792300BC83C8 /* KlugOrdenaPontosTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlugOrdenaPontosTest.m; sourceTree = "<group>"; };
+		1644A25F17977ECF00BC83C8 /* Ordenador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ordenador.h; sourceTree = "<group>"; };
+		1644A26017977ECF00BC83C8 /* Ordenador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ordenador.m; sourceTree = "<group>"; };
+		164DF39117837BFA0059A06F /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		1650D68217B13428005F088B /* jingle_teste.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jingle_teste.m4a; sourceTree = "<group>"; };
+		1673D1BA17938A5B0038D692 /* KREditPontoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KREditPontoViewController.h; sourceTree = "<group>"; };
+		1673D1BB17938A5B0038D692 /* KREditPontoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KREditPontoViewController.m; sourceTree = "<group>"; };
+		1678649617AA97B800534D41 /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
+		1678649717AA97B800534D41 /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
+		1678649817AA97B800534D41 /* FSRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRequester.h; sourceTree = "<group>"; };
+		1678649917AA97B800534D41 /* FSRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRequester.m; sourceTree = "<group>"; };
+		1678649A17AA97B800534D41 /* FSTargetCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTargetCallback.h; sourceTree = "<group>"; };
+		1678649B17AA97B800534D41 /* FSTargetCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTargetCallback.m; sourceTree = "<group>"; };
+		1678649C17AA97B800534D41 /* FSWebLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebLogin.h; sourceTree = "<group>"; };
+		1678649D17AA97B800534D41 /* FSWebLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebLogin.m; sourceTree = "<group>"; };
+		1678649E17AA97B800534D41 /* FSWebLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSWebLogin.xib; sourceTree = "<group>"; };
+		1678649F17AA97B800534D41 /* pin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin2.png; sourceTree = "<group>"; };
+		167864A017AA97B800534D41 /* pin2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin2@2x.png"; sourceTree = "<group>"; };
+		167864A117AA97B800534D41 /* poweredByFoursquare_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poweredByFoursquare_gray.png; sourceTree = "<group>"; };
+		167864A217AA97B800534D41 /* poweredByFoursquare_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poweredByFoursquare_gray@2x.png"; sourceTree = "<group>"; };
+		16A002D3177F921A009D92A8 /* klugrota.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = klugrota.xcdatamodel; sourceTree = "<group>"; };
+		16CB967A177E6F7C005CB78A /* KlugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlugViewController.m; sourceTree = "<group>"; };
+		16CB967B177E6F7C005CB78A /* KlugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlugViewController.h; sourceTree = "<group>"; };
+		16CB967C177E6F7C005CB78A /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		16CB967D177E6F7C005CB78A /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		16CB967E177E6F7C005CB78A /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		16CB967F177E6F7C005CB78A /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		16CB9687177E73A1005CB78A /* UTMConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTMConverter.h; sourceTree = "<group>"; };
+		16CB9688177E73A1005CB78A /* UTMConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTMConverter.m; sourceTree = "<group>"; };
+		16CB9689177E73A1005CB78A /* UTMDatumMake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTMDatumMake.h; sourceTree = "<group>"; };
+		16CBC5891785B6FF00ADC5D1 /* kluginTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kluginTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16CBC58A1785B6FF00ADC5D1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		16CBC5901785B6FF00ADC5D1 /* kluginTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "kluginTest-Info.plist"; sourceTree = "<group>"; };
+		16CBC5921785B6FF00ADC5D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16CBC5941785B6FF00ADC5D1 /* kluginTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kluginTest.h; sourceTree = "<group>"; };
+		16CBC5951785B6FF00ADC5D1 /* kluginTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kluginTest.m; sourceTree = "<group>"; };
+		16CBC5971785B6FF00ADC5D1 /* kluginTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kluginTest-Prefix.pch"; sourceTree = "<group>"; };
+		16CFE7AF1769E51A00D86B48 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		16CFE7B11769F64F00D86B48 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		16D6EDC61764C85A001ACBE4 /* klugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = klugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16D6EDC91764C85A001ACBE4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		16D6EDCB1764C85A001ACBE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		16D6EDCD1764C85A001ACBE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		16D6EDD11764C85A001ACBE4 /* klugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "klugin-Info.plist"; sourceTree = "<group>"; };
+		16D6EDD31764C85A001ACBE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16D6EDD51764C85A001ACBE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		16D6EDD71764C85A001ACBE4 /* klugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "klugin-Prefix.pch"; sourceTree = "<group>"; };
+		16D6EDD81764C85A001ACBE4 /* KIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIAppDelegate.h; sourceTree = "<group>"; };
+		16D6EDD91764C85A001ACBE4 /* KIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIAppDelegate.m; sourceTree = "<group>"; };
+		16D6EDDB1764C85A001ACBE4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		16D6EDDD1764C85A001ACBE4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		16D6EDDF1764C85A001ACBE4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		16D6EDEC1764C91C001ACBE4 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		16D6EDEE1764CA2B001ACBE4 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		16D6EDF01764CB99001ACBE4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		16D6EDF11764CB99001ACBE4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		16D6EDF21764CB99001ACBE4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		16D6EDF31764CB99001ACBE4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		16D6EDF41764CB99001ACBE4 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		16D6EDF51764CB99001ACBE4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		16D6EDF61764CB99001ACBE4 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		16D6EDF71764CB99001ACBE4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		16D6EDF81764CB99001ACBE4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		16D6EDF91764CB99001ACBE4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		16D6EDFA1764CB99001ACBE4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		16D6EDFB1764CB99001ACBE4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		16E3249417958BDB004B45D7 /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
+		16E3FEE21786F6C8004B4FF8 /* KlugAppDelegateTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlugAppDelegateTest.h; sourceTree = "<group>"; };
+		16E3FEE31786F6C8004B4FF8 /* KlugAppDelegateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlugAppDelegateTest.m; sourceTree = "<group>"; };
+		16EC920417AD40D200E33FB1 /* KIPorPertoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPorPertoViewController.h; sourceTree = "<group>"; };
+		16EC920517AD40D200E33FB1 /* KIPorPertoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPorPertoViewController.m; sourceTree = "<group>"; };
+		16EC920817AD451C00E33FB1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		16EC920A17AD4B5A00E33FB1 /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
+		16EC920B17AD4B5A00E33FB1 /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConverter.m; sourceTree = "<group>"; };
+		16EC920C17AD4B5A00E33FB1 /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
+		16EC920D17AD4B5A00E33FB1 /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16CBC5851785B6FF00ADC5D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				160BA469178A20D000616B17 /* CoreGraphics.framework in Frameworks */,
+				163FF5DF178868D3000A7E0B /* AVFoundation.framework in Frameworks */,
+				163FF5E0178868D3000A7E0B /* CoreData.framework in Frameworks */,
+				163FF5E1178868D3000A7E0B /* CoreLocation.framework in Frameworks */,
+				163FF5E2178868D3000A7E0B /* CoreText.framework in Frameworks */,
+				163FF5E3178868D3000A7E0B /* GLKit.framework in Frameworks */,
+				163FF5E4178868D3000A7E0B /* ImageIO.framework in Frameworks */,
+				163FF5E5178868D3000A7E0B /* libc++.dylib in Frameworks */,
+				163FF5E6178868D3000A7E0B /* libicucore.dylib in Frameworks */,
+				163FF5E7178868D3000A7E0B /* libz.dylib in Frameworks */,
+				163FF5E8178868D3000A7E0B /* OpenGLES.framework in Frameworks */,
+				163FF5E9178868D3000A7E0B /* QuartzCore.framework in Frameworks */,
+				163FF5EA178868D3000A7E0B /* SystemConfiguration.framework in Frameworks */,
+				16CBC58C1785B6FF00ADC5D1 /* UIKit.framework in Frameworks */,
+				16E3FEE81786FCCF004B4FF8 /* GoogleMaps.framework in Frameworks */,
+				16CBC58B1785B6FF00ADC5D1 /* SenTestingKit.framework in Frameworks */,
+				16CBC58D1785B6FF00ADC5D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16D6EDC31764C85A001ACBE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16EC920917AD451C00E33FB1 /* MapKit.framework in Frameworks */,
+				160BA46B178A2BEF00616B17 /* libsqlite3.dylib in Frameworks */,
+				16D6EDFC1764CB99001ACBE4 /* AVFoundation.framework in Frameworks */,
+				16D6EDFD1764CB99001ACBE4 /* CoreData.framework in Frameworks */,
+				16D6EDFE1764CB99001ACBE4 /* CoreLocation.framework in Frameworks */,
+				16D6EDFF1764CB99001ACBE4 /* CoreText.framework in Frameworks */,
+				16D6EE001764CB99001ACBE4 /* GLKit.framework in Frameworks */,
+				16D6EE011764CB99001ACBE4 /* ImageIO.framework in Frameworks */,
+				16D6EE021764CB99001ACBE4 /* libc++.dylib in Frameworks */,
+				16D6EE031764CB99001ACBE4 /* libicucore.dylib in Frameworks */,
+				16D6EE041764CB99001ACBE4 /* libz.dylib in Frameworks */,
+				16D6EE051764CB99001ACBE4 /* OpenGLES.framework in Frameworks */,
+				16D6EE061764CB99001ACBE4 /* QuartzCore.framework in Frameworks */,
+				16D6EE071764CB99001ACBE4 /* SystemConfiguration.framework in Frameworks */,
+				16D6EDCA1764C85A001ACBE4 /* UIKit.framework in Frameworks */,
+				16D6EDCC1764C85A001ACBE4 /* Foundation.framework in Frameworks */,
+				16D6EDCE1764C85A001ACBE4 /* CoreGraphics.framework in Frameworks */,
+				16D6EDED1764C91C001ACBE4 /* GoogleMaps.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16610A22178D95F500C65158 /* tabRotas */ = {
+			isa = PBXGroup;
+			children = (
+				16131A25177D1FC50067EFA2 /* KRNovaRotaViewController.h */,
+				16131A26177D1FC50067EFA2 /* KRNovaRotaViewController.m */,
+				16131A27177D1FC50067EFA2 /* KRRotaCell.h */,
+				16131A28177D1FC50067EFA2 /* KRRotaCell.m */,
+				16131A19177D172A0067EFA2 /* KRNovoPontoViewController.h */,
+				16131A1A177D172A0067EFA2 /* KRNovoPontoViewController.m */,
+				16131A1B177D172A0067EFA2 /* KRPontoCell.h */,
+				16131A1C177D172A0067EFA2 /* KRPontoCell.m */,
+				16131A1D177D172A0067EFA2 /* KRPontoViewController.h */,
+				16131A1E177D172A0067EFA2 /* KRPontoViewController.m */,
+				16131A1F177D172A0067EFA2 /* KRRotaViewController.h */,
+				16131A20177D172A0067EFA2 /* KRRotaViewController.m */,
+				1673D1BA17938A5B0038D692 /* KREditPontoViewController.h */,
+				1673D1BB17938A5B0038D692 /* KREditPontoViewController.m */,
+			);
+			name = tabRotas;
+			sourceTree = "<group>";
+		};
+		16610A23178D96D200C65158 /* tabOndeEstou */ = {
+			isa = PBXGroup;
+			children = (
+				16CB9687177E73A1005CB78A /* UTMConverter.h */,
+				16CB9688177E73A1005CB78A /* UTMConverter.m */,
+				16CB9689177E73A1005CB78A /* UTMDatumMake.h */,
+				16CB967B177E6F7C005CB78A /* KlugViewController.h */,
+				16CB967A177E6F7C005CB78A /* KlugViewController.m */,
+			);
+			name = tabOndeEstou;
+			sourceTree = "<group>";
+		};
+		16610A24178D970100C65158 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				16CB967D177E6F7C005CB78A /* ActionSheetStringPicker.h */,
+				16CB967C177E6F7C005CB78A /* ActionSheetStringPicker.m */,
+				16CB967F177E6F7C005CB78A /* AbstractActionSheetPicker.h */,
+				16CB967E177E6F7C005CB78A /* AbstractActionSheetPicker.m */,
+				16E3249417958BDB004B45D7 /* Constantes.h */,
+				1644A25F17977ECF00BC83C8 /* Ordenador.h */,
+				1644A26017977ECF00BC83C8 /* Ordenador.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		1678649517AA97B800534D41 /* Foursquare2 */ = {
+			isa = PBXGroup;
+			children = (
+				1678649617AA97B800534D41 /* Foursquare2.h */,
+				1678649717AA97B800534D41 /* Foursquare2.m */,
+				1678649817AA97B800534D41 /* FSRequester.h */,
+				1678649917AA97B800534D41 /* FSRequester.m */,
+				1678649A17AA97B800534D41 /* FSTargetCallback.h */,
+				1678649B17AA97B800534D41 /* FSTargetCallback.m */,
+				1678649C17AA97B800534D41 /* FSWebLogin.h */,
+				1678649D17AA97B800534D41 /* FSWebLogin.m */,
+				1678649E17AA97B800534D41 /* FSWebLogin.xib */,
+				1678649F17AA97B800534D41 /* pin2.png */,
+				167864A017AA97B800534D41 /* pin2@2x.png */,
+				167864A117AA97B800534D41 /* poweredByFoursquare_gray.png */,
+				167864A217AA97B800534D41 /* poweredByFoursquare_gray@2x.png */,
+			);
+			path = Foursquare2;
+			sourceTree = "<group>";
+		};
+		16CB9680177E6FAC005CB78A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				161928F617A00C9D00CC2196 /* PontoRota.h */,
+				161928F717A00C9D00CC2196 /* PontoRota.m */,
+				16A002D2177F921A009D92A8 /* klugrota.xcdatamodeld */,
+				16131A14177D168F0067EFA2 /* Rota.h */,
+				16131A15177D168F0067EFA2 /* Rota.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		16CBC58E1785B6FF00ADC5D1 /* kluginTest */ = {
+			isa = PBXGroup;
+			children = (
+				16CBC5941785B6FF00ADC5D1 /* kluginTest.h */,
+				16CBC5951785B6FF00ADC5D1 /* kluginTest.m */,
+				16CBC58F1785B6FF00ADC5D1 /* Supporting Files */,
+				16E3FEE21786F6C8004B4FF8 /* KlugAppDelegateTest.h */,
+				16E3FEE31786F6C8004B4FF8 /* KlugAppDelegateTest.m */,
+				1644A25C1797792300BC83C8 /* KlugOrdenaPontosTest.h */,
+				1644A25D1797792300BC83C8 /* KlugOrdenaPontosTest.m */,
+			);
+			path = kluginTest;
+			sourceTree = "<group>";
+		};
+		16CBC58F1785B6FF00ADC5D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16CBC5901785B6FF00ADC5D1 /* kluginTest-Info.plist */,
+				16CBC5911785B6FF00ADC5D1 /* InfoPlist.strings */,
+				16CBC5971785B6FF00ADC5D1 /* kluginTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16D6EDBD1764C85A001ACBE4 = {
+			isa = PBXGroup;
+			children = (
+				16D6EDCF1764C85A001ACBE4 /* klugin */,
+				16CBC58E1785B6FF00ADC5D1 /* kluginTest */,
+				16D6EDC81764C85A001ACBE4 /* Frameworks */,
+				16D6EDC71764C85A001ACBE4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16D6EDC71764C85A001ACBE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16D6EDC61764C85A001ACBE4 /* klugin.app */,
+				16CBC5891785B6FF00ADC5D1 /* kluginTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16D6EDC81764C85A001ACBE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16EC920817AD451C00E33FB1 /* MapKit.framework */,
+				163FF5ED17886AF8000A7E0B /* GoogleMaps.bundle */,
+				16D6EDF01764CB99001ACBE4 /* AVFoundation.framework */,
+				16D6EDF11764CB99001ACBE4 /* CoreData.framework */,
+				16D6EDF21764CB99001ACBE4 /* CoreLocation.framework */,
+				16D6EDF31764CB99001ACBE4 /* CoreText.framework */,
+				16D6EDF41764CB99001ACBE4 /* GLKit.framework */,
+				16D6EDF51764CB99001ACBE4 /* ImageIO.framework */,
+				16D6EDF61764CB99001ACBE4 /* libc++.dylib */,
+				16D6EDF71764CB99001ACBE4 /* libicucore.dylib */,
+				16D6EDF81764CB99001ACBE4 /* libz.dylib */,
+				160BA46A178A2BEF00616B17 /* libsqlite3.dylib */,
+				16D6EDF91764CB99001ACBE4 /* OpenGLES.framework */,
+				16D6EDFA1764CB99001ACBE4 /* QuartzCore.framework */,
+				16D6EDFB1764CB99001ACBE4 /* SystemConfiguration.framework */,
+				16D6EDEE1764CA2B001ACBE4 /* GoogleMaps.bundle */,
+				16D6EDEC1764C91C001ACBE4 /* GoogleMaps.framework */,
+				16D6EDC91764C85A001ACBE4 /* UIKit.framework */,
+				16D6EDCB1764C85A001ACBE4 /* Foundation.framework */,
+				16D6EDCD1764C85A001ACBE4 /* CoreGraphics.framework */,
+				16CBC58A1785B6FF00ADC5D1 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16D6EDCF1764C85A001ACBE4 /* klugin */ = {
+			isa = PBXGroup;
+			children = (
+				16610A24178D970100C65158 /* util */,
+				1678649517AA97B800534D41 /* Foursquare2 */,
+				16EC920717AD40E000E33FB1 /* tabFourSquare */,
+				16610A23178D96D200C65158 /* tabOndeEstou */,
+				16610A22178D95F500C65158 /* tabRotas */,
+				16CB9680177E6FAC005CB78A /* model */,
+				16D6EDD81764C85A001ACBE4 /* KIAppDelegate.h */,
+				16D6EDD91764C85A001ACBE4 /* KIAppDelegate.m */,
+				16CFE7AF1769E51A00D86B48 /* Storyboard.storyboard */,
+				16D6EDD01764C85A001ACBE4 /* Supporting Files */,
+				164DF39117837BFA0059A06F /* README */,
+			);
+			path = klugin;
+			sourceTree = "<group>";
+		};
+		16D6EDD01764C85A001ACBE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1650D68217B13428005F088B /* jingle_teste.m4a */,
+				16CFE7B11769F64F00D86B48 /* pin.png */,
+				16D6EDD11764C85A001ACBE4 /* klugin-Info.plist */,
+				16D6EDD21764C85A001ACBE4 /* InfoPlist.strings */,
+				16D6EDD51764C85A001ACBE4 /* main.m */,
+				16D6EDD71764C85A001ACBE4 /* klugin-Prefix.pch */,
+				16D6EDDB1764C85A001ACBE4 /* Default.png */,
+				16D6EDDD1764C85A001ACBE4 /* Default@2x.png */,
+				16D6EDDF1764C85A001ACBE4 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16EC920717AD40E000E33FB1 /* tabFourSquare */ = {
+			isa = PBXGroup;
+			children = (
+				16EC920A17AD4B5A00E33FB1 /* FSConverter.h */,
+				16EC920B17AD4B5A00E33FB1 /* FSConverter.m */,
+				16EC920C17AD4B5A00E33FB1 /* FSVenue.h */,
+				16EC920D17AD4B5A00E33FB1 /* FSVenue.m */,
+				16EC920417AD40D200E33FB1 /* KIPorPertoViewController.h */,
+				16EC920517AD40D200E33FB1 /* KIPorPertoViewController.m */,
+			);
+			name = tabFourSquare;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16CBC5881785B6FF00ADC5D1 /* kluginTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16CBC59B1785B6FF00ADC5D1 /* Build configuration list for PBXNativeTarget "kluginTest" */;
+			buildPhases = (
+				16CBC5841785B6FF00ADC5D1 /* Sources */,
+				16CBC5851785B6FF00ADC5D1 /* Frameworks */,
+				16CBC5861785B6FF00ADC5D1 /* Resources */,
+				16CBC5871785B6FF00ADC5D1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16CBC59D1785B71F00ADC5D1 /* PBXTargetDependency */,
+			);
+			name = kluginTest;
+			productName = kluginTest;
+			productReference = 16CBC5891785B6FF00ADC5D1 /* kluginTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		16D6EDC51764C85A001ACBE4 /* klugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16D6EDE91764C85A001ACBE4 /* Build configuration list for PBXNativeTarget "klugin" */;
+			buildPhases = (
+				16D6EDC21764C85A001ACBE4 /* Sources */,
+				16D6EDC31764C85A001ACBE4 /* Frameworks */,
+				16D6EDC41764C85A001ACBE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = klugin;
+			productName = klugin;
+			productReference = 16D6EDC61764C85A001ACBE4 /* klugin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16D6EDBE1764C85A001ACBE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KI;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = velum;
+			};
+			buildConfigurationList = 16D6EDC11764C85A001ACBE4 /* Build configuration list for PBXProject "klugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 16D6EDBD1764C85A001ACBE4;
+			productRefGroup = 16D6EDC71764C85A001ACBE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16D6EDC51764C85A001ACBE4 /* klugin */,
+				16CBC5881785B6FF00ADC5D1 /* kluginTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16CBC5861785B6FF00ADC5D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16CBC5931785B6FF00ADC5D1 /* InfoPlist.strings in Resources */,
+				163FF5EE17886AF8000A7E0B /* GoogleMaps.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16D6EDC41764C85A001ACBE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D6EDD41764C85A001ACBE4 /* InfoPlist.strings in Resources */,
+				16D6EDDC1764C85A001ACBE4 /* Default.png in Resources */,
+				16D6EDDE1764C85A001ACBE4 /* Default@2x.png in Resources */,
+				16D6EDE01764C85A001ACBE4 /* Default-568h@2x.png in Resources */,
+				16D6EDEF1764CA2B001ACBE4 /* GoogleMaps.bundle in Resources */,
+				16CFE7B01769E51A00D86B48 /* Storyboard.storyboard in Resources */,
+				16CFE7B21769F64F00D86B48 /* pin.png in Resources */,
+				164DF39217837BFA0059A06F /* README in Resources */,
+				167864A717AA97B800534D41 /* FSWebLogin.xib in Resources */,
+				167864A817AA97B800534D41 /* pin2.png in Resources */,
+				167864A917AA97B800534D41 /* pin2@2x.png in Resources */,
+				167864AA17AA97B800534D41 /* poweredByFoursquare_gray.png in Resources */,
+				167864AB17AA97B800534D41 /* poweredByFoursquare_gray@2x.png in Resources */,
+				1650D68317B13428005F088B /* jingle_teste.m4a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16CBC5871785B6FF00ADC5D1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16CBC5841785B6FF00ADC5D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16CBC5961785B6FF00ADC5D1 /* kluginTest.m in Sources */,
+				16E3FEE41786F6C8004B4FF8 /* KlugAppDelegateTest.m in Sources */,
+				1644A25E1797792300BC83C8 /* KlugOrdenaPontosTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16D6EDC21764C85A001ACBE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D6EDD61764C85A001ACBE4 /* main.m in Sources */,
+				16D6EDDA1764C85A001ACBE4 /* KIAppDelegate.m in Sources */,
+				16131A18177D168F0067EFA2 /* Rota.m in Sources */,
+				16131A21177D172A0067EFA2 /* KRNovoPontoViewController.m in Sources */,
+				16131A22177D172A0067EFA2 /* KRPontoCell.m in Sources */,
+				16131A23177D172A0067EFA2 /* KRPontoViewController.m in Sources */,
+				16131A24177D172A0067EFA2 /* KRRotaViewController.m in Sources */,
+				16131A29177D1FC50067EFA2 /* KRNovaRotaViewController.m in Sources */,
+				16131A2A177D1FC50067EFA2 /* KRRotaCell.m in Sources */,
+				16CB9681177E726C005CB78A /* KlugViewController.m in Sources */,
+				16CB9682177E726F005CB78A /* ActionSheetStringPicker.m in Sources */,
+				16CB9683177E7274005CB78A /* AbstractActionSheetPicker.m in Sources */,
+				16CB968A177E73A1005CB78A /* UTMConverter.m in Sources */,
+				16A002D4177F921A009D92A8 /* klugrota.xcdatamodeld in Sources */,
+				1673D1BC17938A5B0038D692 /* KREditPontoViewController.m in Sources */,
+				1644A26117977ECF00BC83C8 /* Ordenador.m in Sources */,
+				161928F817A00C9D00CC2196 /* PontoRota.m in Sources */,
+				167864A317AA97B800534D41 /* Foursquare2.m in Sources */,
+				167864A417AA97B800534D41 /* FSRequester.m in Sources */,
+				167864A517AA97B800534D41 /* FSTargetCallback.m in Sources */,
+				167864A617AA97B800534D41 /* FSWebLogin.m in Sources */,
+				16EC920617AD40D200E33FB1 /* KIPorPertoViewController.m in Sources */,
+				16EC920E17AD4B5A00E33FB1 /* FSConverter.m in Sources */,
+				16EC920F17AD4B5A00E33FB1 /* FSVenue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16CBC59D1785B71F00ADC5D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16D6EDC51764C85A001ACBE4 /* klugin */;
+			targetProxy = 16CBC59C1785B71F00ADC5D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16CBC5911785B6FF00ADC5D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16CBC5921785B6FF00ADC5D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		16D6EDD21764C85A001ACBE4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16D6EDD31764C85A001ACBE4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16CBC5981785B6FF00ADC5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/klugin.app/klugin";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../../Downloads/GoogleMaps-iOS-1.3.0\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "kluginTest/kluginTest-Prefix.pch";
+				INFOPLIST_FILE = "kluginTest/kluginTest-Info.plist";
+				MACH_O_TYPE = mh_bundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		16CBC5991785B6FF00ADC5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/klugin.app/klugin";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../../Downloads/GoogleMaps-iOS-1.3.0\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "kluginTest/kluginTest-Prefix.pch";
+				INFOPLIST_FILE = "kluginTest/kluginTest-Info.plist";
+				MACH_O_TYPE = mh_bundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		16CBC59A1785B6FF00ADC5D1 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/klugin.app/klugin";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../../Downloads/GoogleMaps-iOS-1.3.0\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "kluginTest/kluginTest-Prefix.pch";
+				INFOPLIST_FILE = "kluginTest/kluginTest-Info.plist";
+				MACH_O_TYPE = mh_bundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Distribution;
+		};
+		16D6EDE71764C85A001ACBE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		16D6EDE81764C85A001ACBE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16D6EDEA1764C85A001ACBE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jader Belarmino (H67GED44W7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jader Belarmino (H67GED44W7)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "klugin/klugin-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "klugin/klugin-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9FC86B2A-6FBD-4DAA-91AA-1D01C626A55A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9FC86B2A-6FBD-4DAA-91AA-1D01C626A55A";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		16D6EDEB1764C85A001ACBE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "klugin/klugin-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "klugin/klugin-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1E45CC8E-1009-4028-A635-8939F1359A49";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E45CC8E-1009-4028-A635-8939F1359A49";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		16F4A5861781F45C005D9144 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		16F4A5871781F45C005D9144 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "klugin/klugin-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "klugin/klugin-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1E45CC8E-1009-4028-A635-8939F1359A49";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E45CC8E-1009-4028-A635-8939F1359A49";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16CBC59B1785B6FF00ADC5D1 /* Build configuration list for PBXNativeTarget "kluginTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16CBC5981785B6FF00ADC5D1 /* Debug */,
+				16CBC5991785B6FF00ADC5D1 /* Release */,
+				16CBC59A1785B6FF00ADC5D1 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		16D6EDC11764C85A001ACBE4 /* Build configuration list for PBXProject "klugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16D6EDE71764C85A001ACBE4 /* Debug */,
+				16D6EDE81764C85A001ACBE4 /* Release */,
+				16F4A5861781F45C005D9144 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		16D6EDE91764C85A001ACBE4 /* Build configuration list for PBXNativeTarget "klugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16D6EDEA1764C85A001ACBE4 /* Debug */,
+				16D6EDEB1764C85A001ACBE4 /* Release */,
+				16F4A5871781F45C005D9144 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		16A002D2177F921A009D92A8 /* klugrota.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				16A002D3177F921A009D92A8 /* klugrota.xcdatamodel */,
+			);
+			currentVersion = 16A002D3177F921A009D92A8 /* klugrota.xcdatamodel */;
+			path = klugrota.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 16D6EDBE1764C85A001ACBE4 /* Project object */;
+}
