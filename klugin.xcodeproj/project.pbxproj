@@ -29,7 +29,6 @@
 		163FF5E8178868D3000A7E0B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDF91764CB99001ACBE4 /* OpenGLES.framework */; };
 		163FF5E9178868D3000A7E0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDFA1764CB99001ACBE4 /* QuartzCore.framework */; };
 		163FF5EA178868D3000A7E0B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDFB1764CB99001ACBE4 /* SystemConfiguration.framework */; };
-		163FF5EE17886AF8000A7E0B /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 163FF5ED17886AF8000A7E0B /* GoogleMaps.bundle */; };
 		1644A25E1797792300BC83C8 /* KlugOrdenaPontosTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1644A25D1797792300BC83C8 /* KlugOrdenaPontosTest.m */; };
 		1644A26117977ECF00BC83C8 /* Ordenador.m in Sources */ = {isa = PBXBuildFile; fileRef = 1644A26017977ECF00BC83C8 /* Ordenador.m */; };
 		164DF39217837BFA0059A06F /* README in Resources */ = {isa = PBXBuildFile; fileRef = 164DF39117837BFA0059A06F /* README */; };
@@ -85,6 +84,8 @@
 		16EC920917AD451C00E33FB1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EC920817AD451C00E33FB1 /* MapKit.framework */; };
 		16EC920E17AD4B5A00E33FB1 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC920B17AD4B5A00E33FB1 /* FSConverter.m */; };
 		16EC920F17AD4B5A00E33FB1 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC920D17AD4B5A00E33FB1 /* FSVenue.m */; };
+		16ECA28017C9299000B56493 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ECA27F17C9299000B56493 /* GoogleMaps.framework */; };
+		16ECA28217C929E700B56493 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 16ECA28117C929E700B56493 /* GoogleMaps.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +116,6 @@
 		16131A28177D1FC50067EFA2 /* KRRotaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRotaCell.m; sourceTree = "<group>"; };
 		161928F617A00C9D00CC2196 /* PontoRota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PontoRota.h; sourceTree = "<group>"; };
 		161928F717A00C9D00CC2196 /* PontoRota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PontoRota.m; sourceTree = "<group>"; };
-		163FF5ED17886AF8000A7E0B /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		1644A25C1797792300BC83C8 /* KlugOrdenaPontosTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlugOrdenaPontosTest.h; sourceTree = "<group>"; };
 		1644A25D1797792300BC83C8 /* KlugOrdenaPontosTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlugOrdenaPontosTest.m; sourceTree = "<group>"; };
 		1644A25F17977ECF00BC83C8 /* Ordenador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ordenador.h; sourceTree = "<group>"; };
@@ -193,6 +193,8 @@
 		16EC920B17AD4B5A00E33FB1 /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConverter.m; sourceTree = "<group>"; };
 		16EC920C17AD4B5A00E33FB1 /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
 		16EC920D17AD4B5A00E33FB1 /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
+		16ECA27F17C9299000B56493 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		16ECA28117C929E700B56493 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 				16D6EDCC1764C85A001ACBE4 /* Foundation.framework in Frameworks */,
 				16D6EDCE1764C85A001ACBE4 /* CoreGraphics.framework in Frameworks */,
 				16D6EDED1764C91C001ACBE4 /* GoogleMaps.framework in Frameworks */,
+				16ECA28017C9299000B56493 /* GoogleMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,8 +376,9 @@
 		16D6EDC81764C85A001ACBE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16ECA28117C929E700B56493 /* GoogleMaps.bundle */,
+				16ECA27F17C9299000B56493 /* GoogleMaps.framework */,
 				16EC920817AD451C00E33FB1 /* MapKit.framework */,
-				163FF5ED17886AF8000A7E0B /* GoogleMaps.bundle */,
 				16D6EDF01764CB99001ACBE4 /* AVFoundation.framework */,
 				16D6EDF11764CB99001ACBE4 /* CoreData.framework */,
 				16D6EDF21764CB99001ACBE4 /* CoreLocation.framework */,
@@ -518,7 +522,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CBC5931785B6FF00ADC5D1 /* InfoPlist.strings in Resources */,
-				163FF5EE17886AF8000A7E0B /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +543,7 @@
 				167864AA17AA97B800534D41 /* poweredByFoursquare_gray.png in Resources */,
 				167864AB17AA97B800534D41 /* poweredByFoursquare_gray@2x.png in Resources */,
 				1650D68317B13428005F088B /* jingle_teste.m4a in Resources */,
+				16ECA28217C929E700B56493 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
