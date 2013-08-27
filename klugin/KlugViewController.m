@@ -105,9 +105,9 @@
     NSError *erro = nil;
     [self.managedObjectContext save:&erro];
     if (erro != nil){
-        NSLog(@"Rota: [%@ -> %@] salva com sucesso!", rota.origem, rota.destino );
-    } else {
         NSLog(@"Erro: não foi possível salvar a rota [%@ -> %@] id(%@) !", rota.origem, rota.destino, novaRota[@"id"] );
+    } else {
+        NSLog(@"Rota: [%@ -> %@] salva com sucesso!", rota.origem, rota.destino );
     }
     
     return rota;
@@ -130,9 +130,9 @@
     NSError *erro = nil;
     [self.managedObjectContext save:&erro];
     if (erro != nil){
-        NSLog(@"Ponto: id[%@] salvo com sucesso!", novoPonto[@"id"] );
-    } else {
         NSLog(@"Erro: não foi possível salvar o ponto id[%@]!", novoPonto[@"id"] );
+    } else {
+        NSLog(@"Ponto: id[%@] salvo com sucesso!", novoPonto[@"id"] );
     }
 }
 
