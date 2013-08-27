@@ -46,6 +46,9 @@
 {
     [super viewDidLoad];
     self.lbInformacao.text = @"";
+    
+    [self obtemRotasDoServidor];
+    
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
         /*
@@ -64,6 +67,73 @@
     [locationManager startUpdatingLocation];
     
     [self showPicker];
+}
+
+/**
+ *
+ */
+-(void)obtemRotasDoServidor
+{
+    
+    NSString *urlString= [NSString stringWithFormat:@"http://klugin-jcb.rhcloud.com/rest/rotas"];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSError *error;
+    NSArray *jsonResultSetArray = (NSArray*)[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    for (NSDictionary *rota in jsonResultSetArray){
+        // Salva a rota lida
+        Rota *rotaSalva = [self salvaRota:rota];
+        
+        NSArray* pontosRota = [rota objectForKey:@"pontosRota"];
+        for (NSDictionary* ponto in pontosRota) {
+            // Salva o ponto da rota
+            [self salvaPonto:ponto daRota:rotaSalva];
+        }
+    }
+}
+
+-(Rota *)salvaRota:(NSDictionary *)novaRota
+{
+    Rota *rota;
+    
+    rota = [NSEntityDescription insertNewObjectForEntityForName:@"Rota" inManagedObjectContext:self.managedObjectContext];
+    rota.origem = novaRota[@"origem"];
+    rota.destino = novaRota[@"destino"];
+    
+    NSError *erro = nil;
+    [self.managedObjectContext save:&erro];
+    if (erro != nil){
+        NSLog(@"Rota: [%@ -> %@] salva com sucesso!", rota.origem, rota.destino );
+    } else {
+        NSLog(@"Erro: não foi possível salvar a rota [%@ -> %@] id(%@) !", rota.origem, rota.destino, novaRota[@"id"] );
+    }
+    
+    return rota;
+}
+
+-(void)salvaPonto:(NSDictionary*) novoPonto daRota:(Rota *) rota
+{
+    PontoRota *pontoRota;
+    pontoRota = [NSEntityDescription insertNewObjectForEntityForName:@"PontoRota" inManagedObjectContext:self.managedObjectContext];
+    
+    pontoRota.marcador = [novoPonto objectForKey:@"marcador" ];
+    pontoRota.longi = [NSNumber numberWithDouble: [[novoPonto objectForKey:@"longi" ] doubleValue]];
+    pontoRota.lat = [NSNumber numberWithDouble:[[novoPonto objectForKey:@"lat" ] doubleValue]];
+    pontoRota.erroHorizontal = [NSNumber numberWithDouble:[[novoPonto objectForKey:@"erroHorizontal" ] doubleValue]];
+    pontoRota.geoText = [novoPonto objectForKey:@"geoText" ];
+    pontoRota.ordem = [NSNumber numberWithInteger: [[novoPonto objectForKey:@"ordem" ] integerValue]];
+    pontoRota.tipo = [novoPonto objectForKey:@"tipo" ];
+    pontoRota.minhaRota = rota;
+    
+    NSError *erro = nil;
+    [self.managedObjectContext save:&erro];
+    if (erro != nil){
+        NSLog(@"Ponto: id[%@] salvo com sucesso!", novoPonto[@"id"] );
+    } else {
+        NSLog(@"Erro: não foi possível salvar o ponto id[%@]!", novoPonto[@"id"] );
+    }
 }
 
 -(void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
