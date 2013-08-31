@@ -751,8 +751,8 @@
 		16D6EDEA1764C85A001ACBE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adriano Lemos (6X893W6B3D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adriano Lemos (6X893W6B3D)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -763,8 +763,8 @@
 				INFOPLIST_FILE = "klugin/klugin-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54588205-E897-4E8B-871A-A5377535E15B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "54588205-E897-4E8B-871A-A5377535E15B";
+				PROVISIONING_PROFILE = "1E45CC8E-1009-4028-A635-8939F1359A49";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E45CC8E-1009-4028-A635-8939F1359A49";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
