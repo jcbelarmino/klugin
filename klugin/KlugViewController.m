@@ -83,6 +83,10 @@
     NSArray *jsonResultSetArray = (NSArray*)[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
     for (NSDictionary *rota in jsonResultSetArray){
+        
+        // Testa se a rota já existe e, caso exista, deleta antes (atualizar).
+        [self limpaRotaExistente:rota];
+        
         // Salva a rota lida
         Rota *rotaSalva = [self salvaRota:rota];
         
@@ -92,6 +96,38 @@
             [self salvaPonto:ponto daRota:rotaSalva];
         }
     }
+}
+
+-(void)limpaRotaExistente:(NSDictionary *)rota
+{
+    
+    NSFetchRequest *consulta = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entidade = [NSEntityDescription entityForName:@"Rota" inManagedObjectContext:self.managedObjectContext];
+    
+    [consulta setEntity:entidade];
+    
+    NSPredicate *predicado = [NSPredicate
+                              predicateWithFormat:@" (origem like %@) AND (destino like %@) ",
+                              [rota objectForKey:@"origem"], [rota objectForKey:@"destino"]];
+    
+    [consulta setPredicate:predicado];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject:
+                                [NSSortDescriptor sortDescriptorWithKey:@"origem"
+                                                              ascending:YES]];
+    [consulta setSortDescriptors:sortDescriptors];
+    
+    NSError *erro;
+    
+    NSArray *resultados = [self.managedObjectContext executeFetchRequest:consulta error:
+                           &erro];
+    
+    if ( (resultados != nil) && (resultados.count > 0) ) {
+        [self.managedObjectContext deleteObject:resultados[0]];
+        [self.managedObjectContext save:&erro];
+    }
+    
 }
 
 -(Rota *)salvaRota:(NSDictionary *)novaRota
@@ -165,7 +201,7 @@
                                        successAction:@selector(rotaFoiSelecionada:element:)
                                         cancelAction:@selector(actionPickerCancelled:)
                                               origin:self.view];
-    }else{//não tem rotas cadastradas
+    } else {//não tem rotas cadastradas
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Olá!"
                                                         message:@"Cadastre uma rota na tab \"Rotas\""
                                                        delegate:nil
