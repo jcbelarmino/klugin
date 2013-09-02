@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface KlugViewController : UITableViewController<CLLocationManagerDelegate,UITableViewDelegate>{
+@interface KlugViewController : UITableViewController<CLLocationManagerDelegate,UITableViewDelegate,UIPickerViewDelegate, UIPickerViewDataSource,UIActionSheetDelegate>{
     CLLocationManager *locationManager;
 }
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -19,6 +19,5 @@
 @property (strong, nonatomic) IBOutlet UIView *viewMensagens;
 @property (strong, nonatomic) IBOutlet UILabel *erroLeitura;
 @property (nonatomic, strong) NSMutableDictionary *pontosNotificados;
-
 
 @end

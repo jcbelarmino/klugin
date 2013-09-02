@@ -54,7 +54,7 @@
     rotaController.managedObjectContext = self.managedObjectContext;
     
     [self setupFourSquare];
-    [self playJingle];
+    //[self playJingle];
    
     //limpa as 4 rotas default
     //[self limpaBase:self.managedObjectContext];
