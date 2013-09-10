@@ -391,7 +391,18 @@
     return [NSString stringWithFormat:@"%@. %@. Distância de: %2f", ponto.tipo, ponto.marcador, distancia];
 }
 -(PontoRota *) pontoPenultimaParada{
-    return [self.pontosDaRota objectAtIndex:(self.pontosDaRota.count -2) ];
+    static int PENULTIMA_PARADA = 2;
+    for (int i= self.pontosDaRota.count, p = 1 ; i>=0; i--) {
+        PontoRota *ponto = [self.pontosDaRota objectAtIndex:i];
+        if ([[ponto tipo] isEqual:PARADA_ONIBUS]) {
+            if (p == PENULTIMA_PARADA) {
+                return ponto;
+            }
+            p++;
+            
+        }
+    }
+    return nil;
 }
 /**
  Calcula a distância de notificaçãoo baseado no erro dos pontos lidos.
@@ -408,8 +419,7 @@
     self.labelRotaEscolhida.text = [NSString stringWithFormat:@"%@ -> %@",rotaSelecionada.origem, rotaSelecionada.destino ];
     self.pontosDaRota = [Ordenador ordenaPontos:rotaSelecionada.pontosDaRota];
     self.pontosNotificados = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
-  //may have originated from textField or barButtonItem, use an IBOutlet instead of element
-    //self.animalTextField.text = [self.animals objectAtIndex:self.selectedIndex];
+ 
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
