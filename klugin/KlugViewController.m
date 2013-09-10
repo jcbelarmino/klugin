@@ -399,7 +399,6 @@
                 return ponto;
             }
             p++;
-            
         }
     }
     return nil;
