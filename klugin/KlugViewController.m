@@ -21,6 +21,8 @@
 @property (strong, nonatomic) GMSMutablePath *rota;
 @property (strong, nonatomic) NSArray *pontosDaRota;
 @property (nonatomic, strong) NSMutableArray *rotas;
+@property (strong, nonatomic) UIPickerView *pickerView;
+@property (strong, nonatomic) UIActionSheet *actionSheet;
 
 - (void)rotaFoiSelecionada:(NSNumber *)selectedIndex element:(id)element;
 @end
@@ -65,8 +67,8 @@
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
-    
-    [self showPicker];
+  
+    [self exibirSelecionarDeRotas];
 }
 
 /**
@@ -212,6 +214,112 @@
    
 }
 
+- (void)atualizaRotas
+{
+    NSError *error;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+         */
+        NSLog(@"Erro tratado %@, %@", error, [error userInfo]);
+        abort();
+    }
+    int qtdRotas =  [[self.fetchedResultsController fetchedObjects] count];
+    self.rotas = [[NSMutableArray alloc] initWithCapacity: qtdRotas];
+    //tem rotas cadastradas
+    if (qtdRotas >0) {
+        for (Rota *rota in [self.fetchedResultsController fetchedObjects]) {
+            [self.rotas addObject:[NSString stringWithFormat:@"%@ -> %@", rota.origem, rota.destino]  ];
+        }
+    }
+    
+}
+
+-(void)exibirSelecionarDeRotas
+{
+    [self atualizaRotas];
+    
+    NSString *actionSheetTitle = @"Escolha uma rota"; //Action Sheet Title
+    NSString *cancelTitle = @"Cancela";
+    NSString *selecionar = @"Selecionar";
+    
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle
+                                                             delegate:self
+                                                    cancelButtonTitle:cancelTitle
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:selecionar, nil];
+    
+    [self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+
+    CGRect pickerFrame = CGRectMake(0, 100, 0, 200);
+    
+    self.pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    self.pickerView.showsSelectionIndicator = YES;
+    self.pickerView.dataSource = self;
+    self.pickerView.delegate = self;
+    
+    [self.actionSheet addSubview:self.pickerView];
+ 
+    UISegmentedControl *btSelecionar = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Atualizar"]];
+    btSelecionar.momentary = YES;
+    btSelecionar.frame = CGRectMake(230, 7.0f, 80.0f, 30.0f);
+    btSelecionar.segmentedControlStyle = UISegmentedControlStyleBar;
+    btSelecionar.tintColor = [UIColor blackColor];
+    btSelecionar.accessibilityLabel = @"Atualizar as Rotas";
+    [btSelecionar addTarget:self action:@selector(AtualizaRotasDoPicker:) forControlEvents:UIControlEventValueChanged];
+    [self.actionSheet addSubview:btSelecionar];
+ 
+    [self.actionSheet showInView:self.view];
+    
+    [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    int index = [self.pickerView selectedRowInComponent:0];
+    
+    Rota *rotaSelecionada = [[self.fetchedResultsController fetchedObjects] objectAtIndex:index] ;
+    self.labelRotaEscolhida.text = [NSString stringWithFormat:@"%@ -> %@",rotaSelecionada.origem, rotaSelecionada.destino ];
+    self.pontosDaRota = [Ordenador ordenaPontos:rotaSelecionada.pontosDaRota];
+    self.pontosNotificados = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
+    
+    
+    [self.pickerView removeFromSuperview];
+    [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+
+}
+
+- (void)AtualizaRotasDoPicker:(id)sender{
+    
+    [self obtemRotasDoServidor];
+    
+    [self atualizaRotas];
+    
+    [self.pickerView reloadAllComponents];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    // Colocar o número de acordo com o Array de rotas
+    return self.rotas.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [self.rotas objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+
+}
 
 #pragma mark - Table view delegate
 
