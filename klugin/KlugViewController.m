@@ -385,8 +385,13 @@
     
 }
 - (NSString* ) configuraMsg:(PontoRota *) ponto comDistancia: (double) distancia{
-    
+    if ([ponto isEqual:[self pontoPenultimaParada]]){
+        return @"Você deve descer na próxima parada";
+    }
     return [NSString stringWithFormat:@"%@. %@. Distância de: %2f", ponto.tipo, ponto.marcador, distancia];
+}
+-(PontoRota *) pontoPenultimaParada{
+    return [self.pontosDaRota objectAtIndex:(self.pontosDaRota.count -2) ];
 }
 /**
  Calcula a distância de notificaçãoo baseado no erro dos pontos lidos.
