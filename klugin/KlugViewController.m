@@ -366,8 +366,8 @@
                     && ![self.pontosNotificados objectForKey:[NSNumber numberWithInt:i]] ) {
                 //grava o ponto notificado;
                 [self.pontosNotificados setObject:pr forKey:[NSNumber numberWithInt:i]];
-                //Notifica com alerta
-                NSString *msg = [NSString stringWithFormat:@"%@. %@. Distância de: %2.1f", pr.tipo, pr.marcador, [location distanceFromLocation:locationPontoRota]];
+                //Notifica com alerta se for o penultimo ponto deve sugerir parada
+                NSString *msg = [self configuraMsg:pr comDistancia:[location distanceFromLocation:locationPontoRota]] ;
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Chegou em"
                                                                 message:msg
                                                                delegate:nil
@@ -383,6 +383,10 @@
     
     NSLog(@" KLUGViewController [lat: %f , long: %f]", location.coordinate.latitude, location.coordinate.longitude);
     
+}
+- (NSString* ) configuraMsg:(PontoRota *) ponto comDistancia: (double) distancia{
+    
+    return [NSString stringWithFormat:@"%@. %@. Distância de: %2f", ponto.tipo, ponto.marcador, distancia];
 }
 /**
  Calcula a distância de notificaçãoo baseado no erro dos pontos lidos.
