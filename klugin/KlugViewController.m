@@ -10,11 +10,10 @@
 #import "UTMConverter.h"
 #import "Rota.h"
 #import "PontoRota.h"
-#import "ActionSheetStringPicker.h"
 #import "Constantes.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "Ordenador.h"
-
+#import "Toast+UIView.h"
 
 @interface KlugViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lbInformacao;
@@ -36,8 +35,6 @@
     for (PontoRota *ponto in self.pontosDaRota) {
         [_rota addCoordinate:CLLocationCoordinate2DMake([ponto.lat doubleValue], [ponto.longi doubleValue])];
     }
-        //[_rota addCoordinate:CLLocationCoordinate2DMake(-15.79966, -47.88725)]; // Início
-      //  [_rota addCoordinate: 
   
     return _rota;
 }
@@ -48,8 +45,6 @@
 {
     [super viewDidLoad];
     self.lbInformacao.text = @"";
-    
-    [self obtemRotasDoServidor];
     
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
@@ -68,7 +63,7 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
   
-    [self exibirSelecionarDeRotas];
+    [self exibirSelecionadorDeRotas];
 }
 
 /**
@@ -177,42 +172,6 @@
 -(void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
     NSLog(@"iniciou");
 }
-- (void)showPicker{
-    NSError *error;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-         */
-        NSLog(@"Erro tratado %@, %@", error, [error userInfo]);
-        abort();
-    }
-    int qtdRotas =  [[self.fetchedResultsController fetchedObjects] count];
-    self.rotas = [[NSMutableArray alloc] initWithCapacity: qtdRotas];
-    //tem rotas cadastradas
-    if (qtdRotas >0) {
-        for (Rota *rota in [self.fetchedResultsController fetchedObjects]) {
-            [self.rotas addObject:[NSString stringWithFormat:@"%@ -> %@", rota.origem, rota.destino]  ];
-        }
-        // Selecionar a rota
-        [ActionSheetStringPicker showPickerWithTitle:@"Selecione a rota"
-                                                rows:self.rotas
-                                    initialSelection:0
-                                              target:self
-                                       successAction:@selector(rotaFoiSelecionada:element:)
-                                        cancelAction:@selector(actionPickerCancelled:)
-                                              origin:self.view];
-    } else {//não tem rotas cadastradas
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Olá!"
-                                                        message:@"Cadastre uma rota na tab \"Rotas\""
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-   
-}
 
 - (void)atualizaRotas
 {
@@ -237,7 +196,7 @@
     
 }
 
--(void)exibirSelecionarDeRotas
+-(void)exibirSelecionadorDeRotas
 {
     [self atualizaRotas];
     
@@ -265,7 +224,7 @@
     UISegmentedControl *btSelecionar = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Atualizar"]];
     btSelecionar.momentary = YES;
     btSelecionar.frame = CGRectMake(230, 7.0f, 80.0f, 30.0f);
-    btSelecionar.segmentedControlStyle = UISegmentedControlStyleBar;
+    btSelecionar.segmentedControlStyle = UISegmentedControlStylePlain;
     btSelecionar.tintColor = [UIColor blackColor];
     btSelecionar.accessibilityLabel = @"Atualizar as Rotas";
     [btSelecionar addTarget:self action:@selector(AtualizaRotasDoPicker:) forControlEvents:UIControlEventValueChanged];
@@ -283,7 +242,9 @@
     Rota *rotaSelecionada = [[self.fetchedResultsController fetchedObjects] objectAtIndex:index] ;
     self.labelRotaEscolhida.text = [NSString stringWithFormat:@"%@ -> %@",rotaSelecionada.origem, rotaSelecionada.destino ];
     self.pontosDaRota = [Ordenador ordenaPontos:rotaSelecionada.pontosDaRota];
-    self.pontosNotificados = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
+    self.pontosNotificadosAbaixo15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
+    self.pontosNotificados40para15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
+    self.pontosNotificados65para40 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     
     
     [self.pickerView removeFromSuperview];
@@ -293,11 +254,27 @@
 
 - (void)AtualizaRotasDoPicker:(id)sender{
     
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.center = CGPointMake(20, 20);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+    
+    [NSThread sleepForTimeInterval:4];
+
     [self obtemRotasDoServidor];
     
     [self atualizaRotas];
     
     [self.pickerView reloadAllComponents];
+    
+    [spinner stopAnimating];
+    
+    [self.actionSheet.viewForBaselineLayout makeToast:@"Rotas atualizadas"
+                duration:3.0
+                position:@"top"
+                   title:@""];
+    
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -327,7 +304,7 @@
 {
     UITableViewCell *theCellClicked = [self.tableView cellForRowAtIndexPath:indexPath];
     if (theCellClicked == self.celulaEscolhida) {
-        [self showPicker];
+        [self exibirSelecionadorDeRotas];
     }else if ([self.rota count]>0) {
         [self localizarUsuario];
     }else{
