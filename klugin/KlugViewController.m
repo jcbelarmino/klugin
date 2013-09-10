@@ -339,20 +339,43 @@
                                                                  longitude:coord.longitude];
             //notifica se a distância for menor que a distância dos erros e o ponto ainda não foi notificado.
             PontoRota *pr = [self.pontosDaRota objectAtIndex:i];
-            if ([location distanceFromLocation:locationPontoRota] < [self distanciaNotificacaoPontoLido:location pontoRota:pr]
-                    && ![self.pontosNotificados objectForKey:[NSNumber numberWithInt:i]] ) {
-                //grava o ponto notificado;
-                [self.pontosNotificados setObject:pr forKey:[NSNumber numberWithInt:i]];
-                //Notifica com alerta se for o penultimo ponto deve sugerir parada
-                NSString *msg = [self configuraMsg:pr comDistancia:[location distanceFromLocation:locationPontoRota]] ;
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Chegou em"
-                                                                message:msg
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
-                //Atualiza label com a lista de pontos notificados
-                self.lbInformacao.text = [NSString stringWithFormat:@"%@. %@", self.lbInformacao.text, pr.marcador];
+            double errosSomados = [self distanciaNotificacaoPontoLido:location pontoRota:pr];
+            double distancia    = [location distanceFromLocation:locationPontoRota];
+            
+            if (distancia < errosSomados){
+                
+                BOOL notificar = NO;
+                NSString *titulo;
+                
+                if ( (distancia > DISTANCIA_INTER && distancia <= DISTANCIA_MAXIMA) &&
+                    ![self.pontosNotificados65para40 objectForKey:[NSNumber numberWithInt:i]] ) {
+                    titulo = @"Chegando a";
+                    [self.pontosNotificados65para40 setObject:pr forKey:[NSNumber numberWithInt:i]];
+                    notificar = YES;
+                } else if ( (distancia > DISTANCIA_MINIMA && distancia <= DISTANCIA_INTER) &&
+                           ![self.pontosNotificados40para15 objectForKey:[NSNumber numberWithInt:i]] ) {
+                    titulo = @"Próximo a";
+                    [self.pontosNotificados40para15 setObject:pr forKey:[NSNumber numberWithInt:i]];
+                    notificar = YES;
+                } else if ( distancia <= DISTANCIA_MINIMA &&
+                           ![self.pontosNotificadosAbaixo15 objectForKey:[NSNumber numberWithInt:i]] ) {
+                    titulo = @"Chegou a";
+                    [self.pontosNotificadosAbaixo15 setObject:pr forKey:[NSNumber numberWithInt:i]];
+                    notificar = YES;
+                }
+
+                if ( notificar ){
+                    //Notifica com alerta
+                    NSString *msg = [NSString stringWithFormat:@"%@. %@. Distância de: %2.1f", pr.tipo, pr.marcador, distancia];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titulo
+                                                                    message:msg
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                    //Atualiza label com a lista de pontos notificados
+                    self.lbInformacao.text = [NSString stringWithFormat:@"%@. %@", self.lbInformacao.text, pr.marcador];
+                }
             }
         }
 
@@ -395,8 +418,9 @@
     Rota *rotaSelecionada = [[self.fetchedResultsController fetchedObjects] objectAtIndex:index] ;
     self.labelRotaEscolhida.text = [NSString stringWithFormat:@"%@ -> %@",rotaSelecionada.origem, rotaSelecionada.destino ];
     self.pontosDaRota = [Ordenador ordenaPontos:rotaSelecionada.pontosDaRota];
-    self.pontosNotificados = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
- 
+    self.pontosNotificadosAbaixo15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
+    self.pontosNotificados40para15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
+    self.pontosNotificados65para40 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
