@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *celulaEscolhida;
 @property (strong, nonatomic) IBOutlet UIView *viewMensagens;
 @property (strong, nonatomic) IBOutlet UILabel *erroLeitura;
-@property (nonatomic, strong) NSMutableDictionary *pontosNotificados;
+@property (nonatomic, strong) NSMutableDictionary *pontosNotificadosAbaixo15;
+@property (nonatomic, strong) NSMutableDictionary *pontosNotificados40para15;
+@property (nonatomic, strong) NSMutableDictionary *pontosNotificados65para40;
 
 @end

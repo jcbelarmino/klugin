@@ -7,7 +7,6 @@
 //
 
 #import "KREditPontoViewController.h"
-#import "ActionSheetStringPicker.h"
 
 @interface KREditPontoViewController ()
 @property (strong, nonatomic) NSArray *tipos;
@@ -47,7 +46,8 @@
     self.valLongitude.text= [NSString stringWithFormat:@"%3.6f", [self.pontoRotaEdit.longi floatValue]];
     self.valErroleitura.text = [NSString stringWithFormat:@"%3.1f", [self.pontoRotaEdit.erroHorizontal floatValue]];
     
-    [self showPicker];
+    // TODO: Remover completamente junto com a TAB
+    // [self showPicker];
      
 }
 
@@ -58,7 +58,9 @@
 }
 
 
-
+/**
+ // TODO: Remover completamente junto com a TAB
+ 
 - (void)showPicker{
     // Selecionar a rota
     [ActionSheetStringPicker showPickerWithTitle:@"Tipo de marcador"
@@ -69,6 +71,8 @@
                                     cancelAction:@selector(actionPickerCancelled:)
                                           origin:self.view];
 }
+*/
+
 
 - (void)tipoEscolhido:(NSNumber *)selectedIndex element:(id)element {
     self.valTipoMarcador.text = [self.tipos objectAtIndex:[selectedIndex integerValue]];

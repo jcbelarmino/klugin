@@ -9,8 +9,9 @@
 #ifndef klugin_Constantes_h
 #define klugin_Constantes_h
 
-const static NSString *PARADA_ONIBUS = @"Parada de ônibus";
 const static double ACURACIA_MINIMA = 65.1; //Qualidade da leitura de localização
-//const static double DISTANCIA_NOTIFICACAO = 10; //distância máxima de notificação.
+#define DISTANCIA_MINIMA    15.0
+#define DISTANCIA_INTER     40.0
+#define DISTANCIA_MAXIMA    65.0
 
 #endif

@@ -9,7 +9,6 @@
 #import "KRNovoPontoViewController.h"
 #import "PontoRota.h"
 #import "KRPontoViewController.h"
-#import "ActionSheetStringPicker.h"
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface KRNovoPontoViewController ()
@@ -82,9 +81,15 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
-    [self showPicker];
+    
+    // IMPORTANTE: Como essa tab vai sair da aplicação, retirei o picker customizado que estávamos usando
+    // no projeto como parte do processo de limpeza.
+    // [self showPicker];
 }
 
+/*
+   TODO: Remover completamente esse método e o que ele realiza juntamente com a TAB.
+ 
 - (void)showPicker{
     // Selecionar a rota
     [ActionSheetStringPicker showPickerWithTitle:@"Tipo de marcador"
@@ -95,6 +100,8 @@
                                     cancelAction:@selector(actionPickerCancelled:)
                                           origin:self.view];
 }
+ 
+*/
 
 - (void)tipoEscolhido:(NSNumber *)selectedIndex element:(id)element {
     self.tipoMarcador.text = [self.tipos objectAtIndex:[selectedIndex integerValue]];
@@ -115,44 +122,6 @@
 }
 #pragma mark - Table view data source
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

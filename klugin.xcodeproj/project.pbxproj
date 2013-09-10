@@ -45,8 +45,6 @@
 		167864AB17AA97B800534D41 /* poweredByFoursquare_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167864A217AA97B800534D41 /* poweredByFoursquare_gray@2x.png */; };
 		16A002D4177F921A009D92A8 /* klugrota.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16A002D2177F921A009D92A8 /* klugrota.xcdatamodeld */; };
 		16CB9681177E726C005CB78A /* KlugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB967A177E6F7C005CB78A /* KlugViewController.m */; };
-		16CB9682177E726F005CB78A /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB967C177E6F7C005CB78A /* ActionSheetStringPicker.m */; };
-		16CB9683177E7274005CB78A /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB967E177E6F7C005CB78A /* AbstractActionSheetPicker.m */; };
 		16CB968A177E73A1005CB78A /* UTMConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB9688177E73A1005CB78A /* UTMConverter.m */; };
 		16CBC58B1785B6FF00ADC5D1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CBC58A1785B6FF00ADC5D1 /* SenTestingKit.framework */; };
 		16CBC58C1785B6FF00ADC5D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDC91764C85A001ACBE4 /* UIKit.framework */; };
@@ -81,6 +79,7 @@
 		16EC920917AD451C00E33FB1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16EC920817AD451C00E33FB1 /* MapKit.framework */; };
 		16EC920E17AD4B5A00E33FB1 /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC920B17AD4B5A00E33FB1 /* FSConverter.m */; };
 		16EC920F17AD4B5A00E33FB1 /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC920D17AD4B5A00E33FB1 /* FSVenue.m */; };
+		B9A3692C17D57961000D7419 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3692B17D57961000D7419 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B9ADBCBA17CC2CE900118477 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ADBCB917CC2CE900118477 /* GoogleMaps.framework */; };
 		B9ADBCBC17CC2D0B00118477 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B9ADBCBB17CC2D0B00118477 /* GoogleMaps.bundle */; };
 /* End PBXBuildFile section */
@@ -137,10 +136,6 @@
 		16A002D3177F921A009D92A8 /* klugrota.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = klugrota.xcdatamodel; sourceTree = "<group>"; };
 		16CB967A177E6F7C005CB78A /* KlugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlugViewController.m; sourceTree = "<group>"; };
 		16CB967B177E6F7C005CB78A /* KlugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlugViewController.h; sourceTree = "<group>"; };
-		16CB967C177E6F7C005CB78A /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
-		16CB967D177E6F7C005CB78A /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
-		16CB967E177E6F7C005CB78A /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
-		16CB967F177E6F7C005CB78A /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
 		16CB9687177E73A1005CB78A /* UTMConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTMConverter.h; sourceTree = "<group>"; };
 		16CB9688177E73A1005CB78A /* UTMConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTMConverter.m; sourceTree = "<group>"; };
 		16CB9689177E73A1005CB78A /* UTMDatumMake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTMDatumMake.h; sourceTree = "<group>"; };
@@ -188,6 +183,8 @@
 		16EC920B17AD4B5A00E33FB1 /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConverter.m; sourceTree = "<group>"; };
 		16EC920C17AD4B5A00E33FB1 /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
 		16EC920D17AD4B5A00E33FB1 /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
+		B9A3692A17D57961000D7419 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		B9A3692B17D57961000D7419 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		B9ADBCB917CC2CE900118477 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		B9ADBCBB17CC2D0B00118477 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,10 +277,8 @@
 		16610A24178D970100C65158 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				16CB967D177E6F7C005CB78A /* ActionSheetStringPicker.h */,
-				16CB967C177E6F7C005CB78A /* ActionSheetStringPicker.m */,
-				16CB967F177E6F7C005CB78A /* AbstractActionSheetPicker.h */,
-				16CB967E177E6F7C005CB78A /* AbstractActionSheetPicker.m */,
+				B9A3692A17D57961000D7419 /* Toast+UIView.h */,
+				B9A3692B17D57961000D7419 /* Toast+UIView.m */,
 				16E3249417958BDB004B45D7 /* Constantes.h */,
 				1644A25F17977ECF00BC83C8 /* Ordenador.h */,
 				1644A26017977ECF00BC83C8 /* Ordenador.m */,
@@ -580,8 +575,6 @@
 				16131A29177D1FC50067EFA2 /* KRNovaRotaViewController.m in Sources */,
 				16131A2A177D1FC50067EFA2 /* KRRotaCell.m in Sources */,
 				16CB9681177E726C005CB78A /* KlugViewController.m in Sources */,
-				16CB9682177E726F005CB78A /* ActionSheetStringPicker.m in Sources */,
-				16CB9683177E7274005CB78A /* AbstractActionSheetPicker.m in Sources */,
 				16CB968A177E73A1005CB78A /* UTMConverter.m in Sources */,
 				16A002D4177F921A009D92A8 /* klugrota.xcdatamodeld in Sources */,
 				1673D1BC17938A5B0038D692 /* KREditPontoViewController.m in Sources */,
@@ -594,6 +587,7 @@
 				16EC920617AD40D200E33FB1 /* KIPorPertoViewController.m in Sources */,
 				16EC920E17AD4B5A00E33FB1 /* FSConverter.m in Sources */,
 				16EC920F17AD4B5A00E33FB1 /* FSVenue.m in Sources */,
+				B9A3692C17D57961000D7419 /* Toast+UIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
