@@ -22,8 +22,8 @@
 @property (nonatomic, strong) NSMutableArray *rotas;
 @property (strong, nonatomic) UIPickerView *pickerView;
 @property (strong, nonatomic) UIActionSheet *actionSheet;
+@property (strong, nonatomic) PontoRota *penultimaParada;
 
-- (void)rotaFoiSelecionada:(NSNumber *)selectedIndex element:(id)element;
 @end
 
 
@@ -235,6 +235,10 @@
     [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
 }
 
+/**
+ *  Quando o botão de seleção do ActionSheet for clicado este método recuperará a rota
+ *  selecionada e atualizará os objetos e listas de controle de notificação.
+ */
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     int index = [self.pickerView selectedRowInComponent:0];
@@ -246,6 +250,16 @@
     self.pontosNotificados40para15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     self.pontosNotificados65para40 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     
+    for (int idx = (self.pontosDaRota.count -1); idx > 0; idx--) {
+        PontoRota *ponto_atual = [self.pontosDaRota objectAtIndex:idx];
+        PontoRota *ponto_anter = [self.pontosDaRota objectAtIndex:(idx - 1)];
+        if ( [ponto_atual.marcador isEqualToString:@"Parada de ônibus"] && [ponto_anter.marcador isEqualToString:@"Parada de ônibus"] ) {
+            self.penultimaParada = ponto_anter;
+            break;
+        } else {
+            self.penultimaParada = nil;
+        }
+    }
     
     [self.pickerView removeFromSuperview];
     [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
@@ -254,26 +268,16 @@
 
 - (void)AtualizaRotasDoPicker:(id)sender{
     
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
-    spinner.center = CGPointMake(20, 20);
-    spinner.hidesWhenStopped = YES;
-    [self.view addSubview:spinner];
-    [spinner startAnimating];
-    
-    [NSThread sleepForTimeInterval:4];
+    [self.actionSheet.viewForBaselineLayout makeToast:@"Atualizando as rotas"
+                                             duration:2.0
+                                             position:@"top"
+                                                title:@""];
 
     [self obtemRotasDoServidor];
     
     [self atualizaRotas];
     
     [self.pickerView reloadAllComponents];
-    
-    [spinner stopAnimating];
-    
-    [self.actionSheet.viewForBaselineLayout makeToast:@"Rotas atualizadas"
-                duration:3.0
-                position:@"top"
-                   title:@""];
     
 }
 
@@ -324,12 +328,19 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+/**
+ * Este é o método central de controle da aplicação. Toda atualização da posição do device
+ * aciona este código que verifica o que deve ser notificado para orientar o usuário.
+ **/
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     
     CLLocation *location = [locations lastObject];
+    
     //identifica a acurácia da medida
     self.erroLeitura.text = [NSString stringWithFormat:@"Erro: vertical: %2.2F. Horizontal %2.2F",
                         location.verticalAccuracy, location.horizontalAccuracy];
+    
     //só calcula se a acurácia horizontal for boa.
     if (location.horizontalAccuracy < ACURACIA_MINIMA) {
         for (int i=0; i<(self.rota.count); i++) {
@@ -361,7 +372,12 @@
                            ![self.pontosNotificadosAbaixo15 objectForKey:[NSNumber numberWithInt:i]] ) {
                     titulo = @"Chegou a";
                     [self.pontosNotificadosAbaixo15 setObject:pr forKey:[NSNumber numberWithInt:i]];
-                    notificar = YES;
+                    
+                    if ( [self.penultimaParada.ordem intValue] == [pr.ordem intValue] ){
+                        [self notificaPenultimaParada];
+                    } else {
+                        notificar = YES;
+                    }
                 }
 
                 if ( notificar ){
@@ -385,6 +401,18 @@
     
 }
 
+-(void) notificaPenultimaParada
+{
+
+    NSString *msg = @"Você chegou à penúltima parada. Assim que puder avise ao condutor que deserá na próxima parada";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Aviso"
+                                                    message:msg
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 /**
  Calcula a distância de notificaçãoo baseado no erro dos pontos lidos.
  */
@@ -393,15 +421,6 @@
     NSLog(@"distância de notificação %f", ([pontoRota.erroHorizontal doubleValue] + pontoLido.horizontalAccuracy));
     return [pontoRota.erroHorizontal doubleValue] + pontoLido.horizontalAccuracy;
     
-}
-- (void)rotaFoiSelecionada:(NSNumber *)selectedIndex element:(id)element {
-    int index = [selectedIndex intValue];
-    Rota *rotaSelecionada = [[self.fetchedResultsController fetchedObjects] objectAtIndex:index] ;
-    self.labelRotaEscolhida.text = [NSString stringWithFormat:@"%@ -> %@",rotaSelecionada.origem, rotaSelecionada.destino ];
-    self.pontosDaRota = [Ordenador ordenaPontos:rotaSelecionada.pontosDaRota];
-    self.pontosNotificadosAbaixo15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
-    self.pontosNotificados40para15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
-    self.pontosNotificados65para40 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
