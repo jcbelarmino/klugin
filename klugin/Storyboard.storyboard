@@ -859,7 +859,7 @@
                             <tableViewSection headerTitle=" " id="dG3-n9-GiC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VTy-gt-Ysb">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -887,7 +887,7 @@
                             <tableViewSection headerTitle=" " id="FgZ-Rh-mfP">
                                 <cells>
                                     <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gt8-wa-Gyk">
-                                        <rect key="frame" x="0.0" y="137" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="137" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1008,8 +1008,12 @@
                 <relationship kind="outlet" name="celulaEscolhida" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="erroLeitura" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelRotaEscolhida" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lbInformacao" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="viewMensagens" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

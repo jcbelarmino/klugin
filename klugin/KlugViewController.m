@@ -190,7 +190,7 @@
     //tem rotas cadastradas
     if (qtdRotas >0) {
         for (Rota *rota in [self.fetchedResultsController fetchedObjects]) {
-            [self.rotas addObject:[NSString stringWithFormat:@"%@ -> %@", rota.origem, rota.destino]  ];
+            [self.rotas addObject:[NSString stringWithFormat:@"De %@ Para %@", rota.origem, rota.destino]  ];
         }
     }
     
@@ -244,7 +244,7 @@
     int index = [self.pickerView selectedRowInComponent:0];
     
     Rota *rotaSelecionada = [[self.fetchedResultsController fetchedObjects] objectAtIndex:index] ;
-    self.labelRotaEscolhida.text = [NSString stringWithFormat:@"%@ -> %@",rotaSelecionada.origem, rotaSelecionada.destino ];
+    self.labelRotaEscolhida.text = [NSString stringWithFormat:@"Rota de %@ para %@",rotaSelecionada.origem, rotaSelecionada.destino ];
     self.pontosDaRota = [Ordenador ordenaPontos:rotaSelecionada.pontosDaRota];
     self.pontosNotificadosAbaixo15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     self.pontosNotificados40para15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
