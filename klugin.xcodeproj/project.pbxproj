@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		160BA469178A20D000616B17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D6EDCD1764C85A001ACBE4 /* CoreGraphics.framework */; };
 		160BA46B178A2BEF00616B17 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 160BA46A178A2BEF00616B17 /* libsqlite3.dylib */; };
-		16131A18177D168F0067EFA2 /* Rota.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A15177D168F0067EFA2 /* Rota.m */; };
 		16131A21177D172A0067EFA2 /* KRNovoPontoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A1A177D172A0067EFA2 /* KRNovoPontoViewController.m */; };
 		16131A22177D172A0067EFA2 /* KRPontoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A1C177D172A0067EFA2 /* KRPontoCell.m */; };
 		16131A23177D172A0067EFA2 /* KRPontoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16131A1E177D172A0067EFA2 /* KRPontoViewController.m */; };
@@ -43,6 +42,7 @@
 		167864A917AA97B800534D41 /* pin2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167864A017AA97B800534D41 /* pin2@2x.png */; };
 		167864AA17AA97B800534D41 /* poweredByFoursquare_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 167864A117AA97B800534D41 /* poweredByFoursquare_gray.png */; };
 		167864AB17AA97B800534D41 /* poweredByFoursquare_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 167864A217AA97B800534D41 /* poweredByFoursquare_gray@2x.png */; };
+		1688765C17E15511007C7EC1 /* Rota.m in Sources */ = {isa = PBXBuildFile; fileRef = 1688765B17E15511007C7EC1 /* Rota.m */; };
 		16A002D4177F921A009D92A8 /* klugrota.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16A002D2177F921A009D92A8 /* klugrota.xcdatamodeld */; };
 		16CB9681177E726C005CB78A /* KlugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB967A177E6F7C005CB78A /* KlugViewController.m */; };
 		16CB968A177E73A1005CB78A /* UTMConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CB9688177E73A1005CB78A /* UTMConverter.m */; };
@@ -96,8 +96,6 @@
 
 /* Begin PBXFileReference section */
 		160BA46A178A2BEF00616B17 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		16131A14177D168F0067EFA2 /* Rota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rota.h; sourceTree = "<group>"; };
-		16131A15177D168F0067EFA2 /* Rota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rota.m; sourceTree = "<group>"; };
 		16131A19177D172A0067EFA2 /* KRNovoPontoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNovoPontoViewController.h; sourceTree = "<group>"; };
 		16131A1A177D172A0067EFA2 /* KRNovoPontoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNovoPontoViewController.m; sourceTree = "<group>"; };
 		16131A1B177D172A0067EFA2 /* KRPontoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRPontoCell.h; sourceTree = "<group>"; };
@@ -133,6 +131,8 @@
 		167864A017AA97B800534D41 /* pin2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin2@2x.png"; sourceTree = "<group>"; };
 		167864A117AA97B800534D41 /* poweredByFoursquare_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poweredByFoursquare_gray.png; sourceTree = "<group>"; };
 		167864A217AA97B800534D41 /* poweredByFoursquare_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poweredByFoursquare_gray@2x.png"; sourceTree = "<group>"; };
+		1688765A17E15511007C7EC1 /* Rota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rota.h; sourceTree = "<group>"; };
+		1688765B17E15511007C7EC1 /* Rota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rota.m; sourceTree = "<group>"; };
 		16A002D3177F921A009D92A8 /* klugrota.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = klugrota.xcdatamodel; sourceTree = "<group>"; };
 		16CB967A177E6F7C005CB78A /* KlugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlugViewController.m; sourceTree = "<group>"; };
 		16CB967B177E6F7C005CB78A /* KlugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlugViewController.h; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 				161928F617A00C9D00CC2196 /* PontoRota.h */,
 				161928F717A00C9D00CC2196 /* PontoRota.m */,
 				16A002D2177F921A009D92A8 /* klugrota.xcdatamodeld */,
-				16131A14177D168F0067EFA2 /* Rota.h */,
-				16131A15177D168F0067EFA2 /* Rota.m */,
+				1688765A17E15511007C7EC1 /* Rota.h */,
+				1688765B17E15511007C7EC1 /* Rota.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -567,7 +567,6 @@
 			files = (
 				16D6EDD61764C85A001ACBE4 /* main.m in Sources */,
 				16D6EDDA1764C85A001ACBE4 /* KIAppDelegate.m in Sources */,
-				16131A18177D168F0067EFA2 /* Rota.m in Sources */,
 				16131A21177D172A0067EFA2 /* KRNovoPontoViewController.m in Sources */,
 				16131A22177D172A0067EFA2 /* KRPontoCell.m in Sources */,
 				16131A23177D172A0067EFA2 /* KRPontoViewController.m in Sources */,
@@ -588,6 +587,7 @@
 				16EC920E17AD4B5A00E33FB1 /* FSConverter.m in Sources */,
 				16EC920F17AD4B5A00E33FB1 /* FSVenue.m in Sources */,
 				B9A3692C17D57961000D7419 /* Toast+UIView.m in Sources */,
+				1688765C17E15511007C7EC1 /* Rota.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,9 +751,8 @@
 		16D6EDEA1764C85A001ACBE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"ARCHS[sdk=*]" = armv7;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jader Belarmino (G38QVLQ642)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -764,8 +763,8 @@
 				INFOPLIST_FILE = "klugin/klugin-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "1E45CC8E-1009-4028-A635-8939F1359A49";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E45CC8E-1009-4028-A635-8939F1359A49";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

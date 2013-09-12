@@ -12,11 +12,12 @@
     </entity>
     <entity name="Rota" representedClassName="Rota" syncable="YES">
         <attribute name="destino" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idRota" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="origem" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pontosDaRota" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PontoRota" inverseName="minhaRota" inverseEntity="PontoRota" syncable="YES"/>
     </entity>
     <elements>
         <element name="PontoRota" positionX="126" positionY="72" width="128" height="165"/>
-        <element name="Rota" positionX="322" positionY="-9" width="128" height="90"/>
+        <element name="Rota" positionX="322" positionY="-9" width="128" height="103"/>
     </elements>
 </model>

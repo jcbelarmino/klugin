@@ -2,7 +2,7 @@
 //  Rota.h
 //  klugin
 //
-//  Created by Jader Belarmino on 09/07/13.
+//  Created by Jader Belarmino on 11/09/13.
 //  Copyright (c) 2013 velum. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * destino;
 @property (nonatomic, retain) NSString * origem;
+@property (nonatomic, retain) NSNumber * idRota;
 @property (nonatomic, retain) NSSet *pontosDaRota;
 @end
 

@@ -105,8 +105,8 @@
     [consulta setEntity:entidade];
     
     NSPredicate *predicado = [NSPredicate
-                              predicateWithFormat:@" (origem like %@) AND (destino like %@) ",
-                              [rota objectForKey:@"origem"], [rota objectForKey:@"destino"]];
+                              predicateWithFormat:@" (idRota = %@) ",
+                              [rota objectForKey:@"id"]];
     
     [consulta setPredicate:predicado];
     
@@ -134,6 +134,7 @@
     rota = [NSEntityDescription insertNewObjectForEntityForName:@"Rota" inManagedObjectContext:self.managedObjectContext];
     rota.origem = novaRota[@"origem"];
     rota.destino = novaRota[@"destino"];
+    rota.idRota = novaRota[@"id"];
     
     NSError *erro = nil;
     [self.managedObjectContext save:&erro];
@@ -412,7 +413,6 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
-
 /**
  Calcula a distância de notificaçãoo baseado no erro dos pontos lidos.
  */
