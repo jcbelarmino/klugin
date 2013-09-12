@@ -859,7 +859,7 @@
                             <tableViewSection headerTitle=" " id="dG3-n9-GiC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VTy-gt-Ysb">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -887,7 +887,7 @@
                             <tableViewSection headerTitle=" " id="FgZ-Rh-mfP">
                                 <cells>
                                     <tableViewCell contentMode="scaleAspectFit" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gt8-wa-Gyk">
-                                        <rect key="frame" x="0.0" y="137" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="137" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -937,6 +937,81 @@
         <image name="pin2.png" width="13" height="20"/>
         <image name="poweredByFoursquare_gray.png" width="236" height="60"/>
     </resources>
+    <classes>
+        <class className="KIPorPertoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KIPorPertoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapaFS" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="KREditPontoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KREditPontoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="salvarPonto:"/>
+                <relationship kind="outlet" name="valErroleitura" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valLatitude" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valLongitude" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valMarcador" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valTipoMarcador" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KRNovaRotaViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KRNovaRotaViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="salvarRota:"/>
+                <relationship kind="outlet" name="destino" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="origem" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="KRNovoPontoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KRNovoPontoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pararLeituraLocalizacao:"/>
+                <relationship kind="action" name="salvarPonto:"/>
+                <relationship kind="outlet" name="erroLeitura" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="marcador" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tipoMarcador" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="valLat" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valLongi" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="KRPontoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KRPontoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="marcador" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ordem" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tipoMarcador" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="valErroLeituraPonto" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="valLat" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="valLongi" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KRPontoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KRPontoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sendEmail:"/>
+                <relationship kind="outlet" name="erroLeitura" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KRRotaCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KRRotaCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nomeRota" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KRRotaViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KRRotaViewController.h"/>
+        </class>
+        <class className="KlugViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KlugViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="celulaEscolhida" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="erroLeitura" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelRotaEscolhida" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="viewMensagens" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
