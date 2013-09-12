@@ -400,24 +400,17 @@
     NSLog(@" KLUGViewController [lat: %f , long: %f]", location.coordinate.latitude, location.coordinate.longitude);
     
 }
-- (NSString* ) configuraMsg:(PontoRota *) ponto comDistancia: (double) distancia{
-    if ([ponto isEqual:[self pontoPenultimaParada]]){
-        return @"Você deve descer na próxima parada";
-    }
-    return [NSString stringWithFormat:@"%@. %@. Distância de: %2f", ponto.tipo, ponto.marcador, distancia];
-}
--(PontoRota *) pontoPenultimaParada{
-    static int PENULTIMA_PARADA = 2;
-    for (int i= self.pontosDaRota.count, p = 1 ; i>=0; i--) {
-        PontoRota *ponto = [self.pontosDaRota objectAtIndex:i];
-        if ([[ponto tipo] isEqual:PARADA_ONIBUS]) {
-            if (p == PENULTIMA_PARADA) {
-                return ponto;
-            }
-            p++;
-        }
-    }
-    return nil;
+
+-(void) notificaPenultimaParada
+{
+
+    NSString *msg = @"Você chegou à penúltima parada. Assim que puder avise ao condutor que deserá na próxima parada";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Aviso"
+                                                    message:msg
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 /**
  Calcula a distância de notificaçãoo baseado no erro dos pontos lidos.
