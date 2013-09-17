@@ -24,6 +24,8 @@
 @property (strong, nonatomic) UIActionSheet *actionSheet;
 @property (strong, nonatomic) PontoRota *penultimaParada;
 
+@property BOOL penultimaParadaNotificada;
+
 @end
 
 
@@ -62,6 +64,8 @@
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
+    
+    _penultimaParadaNotificada = NO;
   
     [self exibirSelecionadorDeRotas];
 }
@@ -252,15 +256,18 @@
     self.pontosNotificados65para40 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     
     for (int idx = (self.pontosDaRota.count -1); idx > 0; idx--) {
+        
         PontoRota *ponto_atual = [self.pontosDaRota objectAtIndex:idx];
         PontoRota *ponto_anter = [self.pontosDaRota objectAtIndex:(idx - 1)];
-        if ( [ponto_atual.marcador isEqualToString:@"Parada de ônibus"] && [ponto_anter.marcador isEqualToString:@"Parada de ônibus"] ) {
+        
+        if ( [ponto_atual.tipo isEqualToString:@"Parada de ônibus"] && [ponto_anter.tipo isEqualToString:@"Parada de ônibus"] ) {
             self.penultimaParada = ponto_anter;
             break;
         } else {
             self.penultimaParada = nil;
         }
     }
+    _penultimaParadaNotificada = NO;
     
     [self.pickerView removeFromSuperview];
     [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
@@ -361,21 +368,32 @@
                 
                 if ( (distancia > DISTANCIA_INTER && distancia <= DISTANCIA_MAXIMA) &&
                     ![self.pontosNotificados65para40 objectForKey:[NSNumber numberWithInt:i]] ) {
-                    titulo = @"Chegando a";
+                    titulo = @"Aviso. Chegando a";
                     [self.pontosNotificados65para40 setObject:pr forKey:[NSNumber numberWithInt:i]];
                     notificar = YES;
                 } else if ( (distancia > DISTANCIA_MINIMA && distancia <= DISTANCIA_INTER) &&
                            ![self.pontosNotificados40para15 objectForKey:[NSNumber numberWithInt:i]] ) {
-                    titulo = @"Próximo a";
+                    titulo = @"Aviso. Próximo a";
                     [self.pontosNotificados40para15 setObject:pr forKey:[NSNumber numberWithInt:i]];
-                    notificar = YES;
+
+                    if ( [self.penultimaParada.ordem intValue] == [pr.ordem intValue] ){
+                        if ( !_penultimaParadaNotificada ){
+                            [self notificaPenultimaParada];
+                            _penultimaParadaNotificada = YES;
+                        }
+                    } else {
+                        notificar = YES;
+                    }
                 } else if ( distancia <= DISTANCIA_MINIMA &&
                            ![self.pontosNotificadosAbaixo15 objectForKey:[NSNumber numberWithInt:i]] ) {
-                    titulo = @"Chegou a";
+                    titulo = @"Aviso. Chegou a";
                     [self.pontosNotificadosAbaixo15 setObject:pr forKey:[NSNumber numberWithInt:i]];
                     
                     if ( [self.penultimaParada.ordem intValue] == [pr.ordem intValue] ){
-                        [self notificaPenultimaParada];
+                        if ( !_penultimaParadaNotificada ){
+                            [self notificaPenultimaParada];
+                            _penultimaParadaNotificada = YES;
+                        }
                     } else {
                         notificar = YES;
                     }
@@ -383,13 +401,19 @@
 
                 if ( notificar ){
                     //Notifica com alerta
-                    NSString *msg = [NSString stringWithFormat:@"%@. %@. Distância de: %2.1f", pr.tipo, pr.marcador, distancia];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titulo
-                                                                    message:msg
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil];
-                    [alert show];
+                    NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2.1f metros", titulo, pr.marcador, distancia];
+                    
+                    if ( UIAccessibilityIsVoiceOverRunning() ) {
+                        UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, msg );
+                    } else {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:titulo
+                                                                        message:msg
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+                        [alert show];
+                    }
+                    
                     //Atualiza label com a lista de pontos notificados
                     self.lbInformacao.text = [NSString stringWithFormat:@"%@. %@", self.lbInformacao.text, pr.marcador];
                 }
@@ -406,12 +430,22 @@
 {
 
     NSString *msg = @"Você chegou à penúltima parada. Assim que puder avise ao condutor que deserá na próxima parada";
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Aviso"
-                                                    message:msg
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+
+    // Não há necessidade de jogar na tela quando o VoiceOver estiver ativo.
+    // Em casos assim, o usuário apenas ouvirá a notificação sem ter que desativar
+    // nada (por exemplo: uma popup de alerta) com vários movimentos até encontrar
+    // o botão de fechar ou coisa do gênero.
+    if ( UIAccessibilityIsVoiceOverRunning() ) {
+        UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, msg );
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Aviso"
+                                                        message:msg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
 }
 /**
  Calcula a distância de notificaçãoo baseado no erro dos pontos lidos.
