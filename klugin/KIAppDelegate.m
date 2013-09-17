@@ -21,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //impede o lock do celular
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     
     [GMSServices provideAPIKey:@"AIzaSyDQN9g0LYVXkdqTcwMKgjP-Ca6Ci1xmgEQ"];
     // Create a location manager instance to determine if location services are enabled. This manager instance will be
