@@ -2,7 +2,7 @@
 //  Rota.h
 //  klug in
 //
-//  Created by Adriano Lemos on 21/09/13.
+//  Created by Jader Belarmino on 14/10/13.
 //  Copyright (c) 2013 Velum. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @interface Rota : NSManagedObject
 
 @property (nonatomic, retain) NSString * destino;
-@property (nonatomic, retain) NSString * origem;
 @property (nonatomic, retain) NSNumber * idRota;
+@property (nonatomic, retain) NSString * origem;
 @property (nonatomic, retain) NSSet *pontosDaRota;
 @end
 
