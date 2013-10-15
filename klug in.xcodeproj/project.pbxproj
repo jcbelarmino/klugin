@@ -210,6 +210,15 @@
 				CLASSPREFIX = KI;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Velum;
+				TargetAttributes = {
+					B99EF99917E16A1400BB0298 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = B99EF99517E16A1400BB0298 /* Build configuration list for PBXProject "klug in" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -349,6 +358,7 @@
 		B99EF9C617E16A1500BB0298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adriano Lemos (6X893W6B3D)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "klug in/klug in-Prefix.pch";
 				INFOPLIST_FILE = "klug in/klug in-Info.plist";
@@ -360,6 +370,7 @@
 		B99EF9C717E16A1500BB0298 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adriano Lemos";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "klug in/klug in-Prefix.pch";
 				INFOPLIST_FILE = "klug in/klug in-Info.plist";
