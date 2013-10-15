@@ -12,15 +12,15 @@
 
 @implementation PontoRota
 
+@dynamic distanciaProxPonto;
 @dynamic erroHorizontal;
 @dynamic geoText;
 @dynamic lat;
 @dynamic longi;
 @dynamic marcador;
 @dynamic ordem;
-@dynamic tipo;
-@dynamic distanciaProxPonto;
 @dynamic orientacao;
+@dynamic tipo;
 @dynamic minhaRota;
 
 @end

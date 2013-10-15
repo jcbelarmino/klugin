@@ -13,15 +13,15 @@
 
 @interface PontoRota : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * distanciaProxPonto;
 @property (nonatomic, retain) NSNumber * erroHorizontal;
 @property (nonatomic, retain) NSString * geoText;
 @property (nonatomic, retain) NSNumber * lat;
 @property (nonatomic, retain) NSNumber * longi;
 @property (nonatomic, retain) NSString * marcador;
 @property (nonatomic, retain) NSNumber * ordem;
-@property (nonatomic, retain) NSString * tipo;
-@property (nonatomic, retain) NSString * distanciaProxPonto;
 @property (nonatomic, retain) NSString * orientacao;
+@property (nonatomic, retain) NSString * tipo;
 @property (nonatomic, retain) Rota *minhaRota;
 
 @end
