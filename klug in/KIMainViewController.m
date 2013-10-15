@@ -255,7 +255,7 @@
                 
                 if ( notificar ){
                     //Notifica com alerta
-                    NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2.1f metros", titulo, pr.marcador, distancia];
+                    NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2.1f metros. %@. Próximo ponto a %d metros", titulo, pr.marcador, distancia, pr.orientacao, [pr.distanciaProxPonto intValue]];
                     
                     if ( UIAccessibilityIsVoiceOverRunning() ) {
                         UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, msg );
@@ -377,6 +377,8 @@
     pontoRota.geoText = [novoPonto objectForKey:@"geoText" ];
     pontoRota.ordem = [NSNumber numberWithInteger: [[novoPonto objectForKey:@"ordem" ] integerValue]];
     pontoRota.tipo = [novoPonto objectForKey:@"tipo" ];
+    pontoRota.orientacao = [novoPonto objectForKey:@"orientacao" ];
+    pontoRota.distanciaProxPonto = [NSNumber numberWithInteger:[[novoPonto objectForKey:@"distanciaProxPonto"] integerValue]];
     pontoRota.minhaRota = rota;
     
     NSError *erro = nil;
