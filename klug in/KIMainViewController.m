@@ -377,8 +377,9 @@
     pontoRota.geoText = [novoPonto objectForKey:@"geoText" ];
     pontoRota.ordem = [NSNumber numberWithInteger: [[novoPonto objectForKey:@"ordem" ] integerValue]];
     pontoRota.tipo = [novoPonto objectForKey:@"tipo" ];
-    pontoRota.orientacao = [novoPonto objectForKey:@"orientacao" ];
-    pontoRota.distanciaProxPonto = [NSNumber numberWithInteger:[[novoPonto objectForKey:@"distanciaProxPonto"] integerValue]];
+    pontoRota.orientacao = [novoPonto objectForKey:@"orientacao" ] == [NSNull null] ? nil : [novoPonto objectForKey:@"orientacao"];
+    NSNumber *distanciaProximoPonto = [novoPonto objectForKey:@"distanciaProxPonto"] == [NSNull null] ? nil : [novoPonto objectForKey:@"distanciaProxPonto"];
+    pontoRota.distanciaProxPonto = [NSNumber numberWithInteger:[distanciaProximoPonto integerValue]];
     pontoRota.minhaRota = rota;
     
     NSError *erro = nil;

@@ -212,6 +212,7 @@
 				ORGANIZATIONNAME = Velum;
 				TargetAttributes = {
 					B99EF99917E16A1400BB0298 = {
+						DevelopmentTeam = G38QVLQ642;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -358,11 +359,13 @@
 		B99EF9C617E16A1500BB0298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adriano Lemos (6X893W6B3D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "klug in/klug in-Prefix.pch";
 				INFOPLIST_FILE = "klug in/klug in-Info.plist";
 				PRODUCT_NAME = klugin;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -370,12 +373,13 @@
 		B99EF9C717E16A1500BB0298 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adriano Lemos";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "klug in/klug in-Prefix.pch";
 				INFOPLIST_FILE = "klug in/klug in-Info.plist";
 				PRODUCT_NAME = klugin;
-				PROVISIONING_PROFILE = "94FD9A68-71A1-4837-AA4D-C7EFFB4798FC";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
