@@ -134,6 +134,10 @@
     self.pontosNotificadosAbaixo15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     self.pontosNotificados40para15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     self.pontosNotificados65para40 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
+   //avisa que a rota está começando
+    if ( UIAccessibilityIsVoiceOverRunning() ) {
+        UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@" %@ iniciada.",self.lbInformacoes.text] );
+    }
     
     for (int idx = (self.pontosDaRota.count -1); idx > 0; idx--) {
         
@@ -240,7 +244,7 @@
                     }
                 } else if ( distancia <= DISTANCIA_MINIMA &&
                            ![self.pontosNotificadosAbaixo15 objectForKey:[NSNumber numberWithInt:i]] ) {
-                    titulo = @"Aviso. Chegou a";
+                    titulo = @"Aviso. Aproximando-se ";
                     [self.pontosNotificadosAbaixo15 setObject:pr forKey:[NSNumber numberWithInt:i]];
                     
                     if ( [self.penultimaParada.ordem intValue] == [pr.ordem intValue] ){
@@ -255,7 +259,7 @@
                 
                 if ( notificar ){
                     //Notifica com alerta
-                    NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2.1f metros. %@. Próximo ponto a %d metros", titulo, pr.marcador, distancia, pr.orientacao, [pr.distanciaProxPonto intValue]];
+                    NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2f metros. %@. Próximo ponto a %d metros", titulo, pr.marcador, distancia, pr.orientacao, [pr.distanciaProxPonto intValue]];
                     
                     if ( UIAccessibilityIsVoiceOverRunning() ) {
                         UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, msg );
