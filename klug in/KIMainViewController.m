@@ -176,28 +176,30 @@
         
         NSURL *url = [NSURL URLWithString:urlString];
         NSData *data = [NSData dataWithContentsOfURL:url];
-        NSError *error;
-        NSArray *jsonResultSetArray = (NSArray*)[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-
-        for (NSDictionary *rota in jsonResultSetArray){
+        if (data){
+            NSError *error;
+            NSArray *jsonResultSetArray = (NSArray*)[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             
-            // Testa se a rota já existe e, caso exista, deleta antes (atualizar).
-            [self limpaRotaExistente:rota];
-            
-            // Salva a rota lida
-            Rota *rotaSalva = [self salvaRota:rota];
-            
-            NSArray* pontosRota = [rota objectForKey:@"pontosRota"];
-            for (NSDictionary* ponto in pontosRota) {
-                // Salva o ponto da rota
-                [self salvaPonto:ponto daRota:rotaSalva];
+            for (NSDictionary *rota in jsonResultSetArray){
+                
+                // Testa se a rota já existe e, caso exista, deleta antes (atualizar).
+                [self limpaRotaExistente:rota];
+                
+                // Salva a rota lida
+                Rota *rotaSalva = [self salvaRota:rota];
+                
+                NSArray* pontosRota = [rota objectForKey:@"pontosRota"];
+                for (NSDictionary* ponto in pontosRota) {
+                    // Salva o ponto da rota
+                    [self salvaPonto:ponto daRota:rotaSalva];
+                }
             }
         }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.activityView stopAnimating];
         });
     });
+
     
 }
 
