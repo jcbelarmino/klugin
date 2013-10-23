@@ -64,7 +64,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.seletorDeRotas.delegate = self;
     self.seletorDeRotas.dataSource = self;
 
@@ -261,7 +260,7 @@
                 
                 if ( notificar ){
                     //Notifica com alerta
-                    NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2f metros. %@. Próximo ponto a %d metros", titulo, pr.marcador, distancia, pr.orientacao, [pr.distanciaProxPonto intValue]];
+                    NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2.0f metros. %@. Próximo ponto a %d metros", titulo, pr.marcador, distancia, pr.orientacao, [pr.distanciaProxPonto intValue]];
                     
                     if ( UIAccessibilityIsVoiceOverRunning() ) {
                         UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, msg );
