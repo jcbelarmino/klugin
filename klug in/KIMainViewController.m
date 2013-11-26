@@ -12,6 +12,7 @@
 #import "PontoRota.h"
 #import "Constantes.h"
 #import "Ordenador.h"
+#import "KIAppDelegate.h"
 
 @interface KIMainViewController () <UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate>
 {
