@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		161E20F21844345C00E41214 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161E20F11844345C00E41214 /* FacebookSDK.framework */; };
 		161E20F51844363F00E41214 /* KILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E20F41844363F00E41214 /* KILoginViewController.m */; };
+		163982CA18460D7700D0AE63 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 163982C918460D7700D0AE63 /* facebook.png */; };
 		16F0C7CC180CDDF70021B702 /* Rota.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F0C7CB180CDDF70021B702 /* Rota.m */; };
 		16F0C7D2180CDF970021B702 /* PontoRota.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F0C7D1180CDF970021B702 /* PontoRota.m */; };
 		B99C217917F2858B0099105B /* Ordenador.m in Sources */ = {isa = PBXBuildFile; fileRef = B99C217817F2858B0099105B /* Ordenador.m */; };
@@ -42,6 +43,7 @@
 		161E20F11844345C00E41214 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		161E20F31844363F00E41214 /* KILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KILoginViewController.h; sourceTree = "<group>"; };
 		161E20F41844363F00E41214 /* KILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KILoginViewController.m; sourceTree = "<group>"; };
+		163982C918460D7700D0AE63 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		16F0C7CA180CDDF70021B702 /* Rota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rota.h; sourceTree = "<group>"; };
 		16F0C7CB180CDDF70021B702 /* Rota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rota.m; sourceTree = "<group>"; };
 		16F0C7D0180CDF970021B702 /* PontoRota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PontoRota.h; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		B99EF9A617E16A1400BB0298 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				163982C918460D7700D0AE63 /* facebook.png */,
 				B9B2909217F4655500DEB3E5 /* Icon-Small.png */,
 				B9B2909317F4655500DEB3E5 /* Icon-Small@2x.png */,
 				B9B2909417F4655500DEB3E5 /* Icon.png */,
@@ -261,6 +264,7 @@
 				B9B2909717F4655500DEB3E5 /* Icon-Small@2x.png in Resources */,
 				B99FBCF717EE93ED00D902B4 /* blueButton.png in Resources */,
 				B99FBCFA17EE93ED00D902B4 /* blueButtonHighlight@2x.png in Resources */,
+				163982CA18460D7700D0AE63 /* facebook.png in Resources */,
 				B99EF9B617E16A1500BB0298 /* Default-568h@2x.png in Resources */,
 				B9B2909617F4655500DEB3E5 /* Icon-Small.png in Resources */,
 				B99FBCF917EE93ED00D902B4 /* blueButtonHighlight.png in Resources */,
