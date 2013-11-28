@@ -21,6 +21,19 @@
     // Override point for customization after application launch.
     KIMainViewController *controller = (KIMainViewController *)self.window.rootViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    // Configurando o modo de processamento de audio em background
+    NSError *error = NULL;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+    if(error) {
+        // Do some error handling
+    }
+    [session setActive:YES error:&error];
+    if (error) {
+        // Do some error handling
+    }
+    
     return YES;
 }
 							

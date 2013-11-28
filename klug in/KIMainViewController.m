@@ -73,7 +73,11 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
+    self.sintetizador = [[AVSpeechSynthesizer alloc] init];
+    
     [self customizarBotoes];
+    
+    self.lbInformacoes.hidden = YES;
     
     // Verificar se a base de rotas está vazia e carregar do servidor
     NSError *error;
@@ -96,6 +100,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Voz
+
+- (void) falarMensagem: (NSString *)mensagem
+{
+
+    // Deixar a voz um pouco mais compassada.
+    float speechSpeed = AVSpeechUtteranceDefaultSpeechRate * 0.5;
+    
+    AVSpeechUtterance *synUtt = [[AVSpeechUtterance alloc] initWithString:mensagem];
+    [synUtt setRate:speechSpeed];
+    [synUtt setVoice:[AVSpeechSynthesisVoice voiceWithLanguage:@"pt-br"]];
+    
+    [self.sintetizador speakUtterance:synUtt];
+
 }
 
 #pragma mark - Botoes
@@ -121,6 +141,8 @@
     
     int index = [self.seletorDeRotas selectedRowInComponent:0];
     
+    self.seletorDeRotas.hidden = !self.seletorDeRotas.hidden;
+    
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
         NSLog(@"Erro tratado %@, %@", error, [error userInfo]);
@@ -133,10 +155,14 @@
     self.pontosNotificadosAbaixo15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     self.pontosNotificados40para15 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
     self.pontosNotificados65para40 = [[NSMutableDictionary alloc] initWithCapacity:self.pontosDaRota.count];
-   //avisa que a rota está começando
+    
+    //avisa que a rota está começando
+    [self falarMensagem:[NSString stringWithFormat:@" %@ iniciada.",self.lbInformacoes.text]];
+    
+    /*
     if ( UIAccessibilityIsVoiceOverRunning() ) {
         UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@" %@ iniciada.",self.lbInformacoes.text] );
-    }
+    }*/
     
     for (int idx = (self.pontosDaRota.count -1); idx > 0; idx--) {
         
@@ -154,7 +180,7 @@
 }
 
 - (IBAction)atualizarRotas:(UIButton *)sender {
-
+    
     [self obtemRotasDoServidor];
     
     [self atualizaRotas];
@@ -196,6 +222,8 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.activityView stopAnimating];
+            [self atualizaRotas];
+            [self.seletorDeRotas reloadAllComponents];
         });
     });
 
@@ -262,6 +290,9 @@
                     //Notifica com alerta
                     NSString *msg = [NSString stringWithFormat:@"%@ %@. Distância de: %2.0f metros. %@. Próximo ponto a %d metros", titulo, pr.marcador, distancia, pr.orientacao, [pr.distanciaProxPonto intValue]];
                     
+                    [self falarMensagem:msg];
+                    
+                    /*
                     if ( UIAccessibilityIsVoiceOverRunning() ) {
                         UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, msg );
                     } else {
@@ -271,7 +302,7 @@
                                                               cancelButtonTitle:@"OK"
                                                               otherButtonTitles:nil];
                         [alert show];
-                    }
+                    }*/
                     
                     //Atualiza label com a lista de pontos notificados
                     self.lbInformacoes.text = [NSString stringWithFormat:@"%@. %@", self.lbInformacoes.text, pr.marcador];
@@ -291,6 +322,10 @@
     // Em casos assim, o usuário apenas ouvirá a notificação sem ter que desativar
     // nada (por exemplo: uma popup de alerta) com vários movimentos até encontrar
     // o botão de fechar ou coisa do gênero.
+    
+    [self falarMensagem:msg];
+    
+    /*
     if ( UIAccessibilityIsVoiceOverRunning() ) {
         UIAccessibilityPostNotification( UIAccessibilityAnnouncementNotification, msg );
     } else {
@@ -301,7 +336,7 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
-    
+    */
 }
 
 /**

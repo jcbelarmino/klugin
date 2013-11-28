@@ -39,6 +39,7 @@
 		B99FBCF917EE93ED00D902B4 /* blueButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = B99FBCF517EE93ED00D902B4 /* blueButtonHighlight.png */; };
 		B99FBCFA17EE93ED00D902B4 /* blueButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B99FBCF617EE93ED00D902B4 /* blueButtonHighlight@2x.png */; };
 		B9B2908117F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B9B2908017F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx */; };
+		B9FC98E81840002B00E067D5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FC98E71840002B00E067D5 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		B99FBCF517EE93ED00D902B4 /* blueButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonHighlight.png; sourceTree = "<group>"; };
 		B99FBCF617EE93ED00D902B4 /* blueButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		B9B2908017F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rota_simulada_casa_trt21.gpx; sourceTree = "<group>"; };
+		B9FC98E71840002B00E067D5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FC98E81840002B00E067D5 /* AVFoundation.framework in Frameworks */,
 				B99FBCF217EE908600D902B4 /* CoreLocation.framework in Frameworks */,
 				B99EF99E17E16A1400BB0298 /* UIKit.framework in Frameworks */,
 				B99EF9A017E16A1400BB0298 /* Foundation.framework in Frameworks */,
@@ -132,6 +135,7 @@
 		B99EF99C17E16A1400BB0298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9FC98E71840002B00E067D5 /* AVFoundation.framework */,
 				B99FBCF117EE908600D902B4 /* CoreLocation.framework */,
 				B99EF99D17E16A1400BB0298 /* UIKit.framework */,
 				B99EF99F17E16A1400BB0298 /* Foundation.framework */,
@@ -231,7 +235,7 @@
 						DevelopmentTeam = HYE4W89SYU;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -386,7 +390,7 @@
 				GCC_PREFIX_HEADER = "klug in/Cao Guia-Prefix.pch";
 				INFOPLIST_FILE = "klug in/Cao Guia-Info.plist";
 				PRODUCT_NAME = klugin;
-				PROVISIONING_PROFILE = "78A13161-6670-49C7-9187-27175BA9EB8D";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -400,7 +404,7 @@
 				GCC_PREFIX_HEADER = "klug in/Cao Guia-Prefix.pch";
 				INFOPLIST_FILE = "klug in/Cao Guia-Info.plist";
 				PRODUCT_NAME = klugin;
-				PROVISIONING_PROFILE = "78A13161-6670-49C7-9187-27175BA9EB8D";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
