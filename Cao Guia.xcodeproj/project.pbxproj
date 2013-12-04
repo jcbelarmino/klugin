@@ -19,12 +19,7 @@
 		B95FA019182096F900905522 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA013182096F900905522 /* Icon-76.png */; };
 		B95FA01A182096F900905522 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA014182096F900905522 /* Icon-76@2x.png */; };
 		B95FA01B182096F900905522 /* Icon-Spotlight-40.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA015182096F900905522 /* Icon-Spotlight-40.png */; };
-		B95FA01C182096F900905522 /* Icon-Spotlight-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA016182096F900905522 /* Icon-Spotlight-40@2x.png */; };
-		B95FA0211820977400905522 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA01F1820977400905522 /* Icon.png */; };
 		B95FA0221820977400905522 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA0201820977400905522 /* Icon@2x.png */; };
-		B95FA02C1820991C00905522 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA0291820991B00905522 /* Default-568h@2x.png */; };
-		B95FA02D1820991C00905522 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA02A1820991C00905522 /* Default.png */; };
-		B95FA02E1820991C00905522 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA02B1820991C00905522 /* Default@2x.png */; };
 		B99C217917F2858B0099105B /* Ordenador.m in Sources */ = {isa = PBXBuildFile; fileRef = B99C217817F2858B0099105B /* Ordenador.m */; };
 		B99EF99E17E16A1400BB0298 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99EF99D17E16A1400BB0298 /* UIKit.framework */; };
 		B99EF9A017E16A1400BB0298 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99EF99F17E16A1400BB0298 /* Foundation.framework */; };
@@ -60,16 +55,11 @@
 		B95FA013182096F900905522 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		B95FA014182096F900905522 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		B95FA015182096F900905522 /* Icon-Spotlight-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40.png"; sourceTree = "<group>"; };
-		B95FA016182096F900905522 /* Icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@2x.png"; sourceTree = "<group>"; };
-		B95FA01F1820977400905522 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B95FA0201820977400905522 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		B95FA0291820991B00905522 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B95FA02A1820991C00905522 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		B95FA02B1820991C00905522 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B99AF54017EF3C9E004E8E16 /* Constantes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
 		B99C217717F2858B0099105B /* Ordenador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ordenador.h; sourceTree = "<group>"; };
 		B99C217817F2858B0099105B /* Ordenador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ordenador.m; sourceTree = "<group>"; };
-		B99EF99A17E16A1400BB0298 /* klugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = klugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B99EF99A17E16A1400BB0298 /* Cao Guia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cao Guia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99EF99D17E16A1400BB0298 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B99EF99F17E16A1400BB0298 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B99EF9A117E16A1400BB0298 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,7 +122,7 @@
 		B99EF99B17E16A1400BB0298 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B99EF99A17E16A1400BB0298 /* klugin.app */,
+				B99EF99A17E16A1400BB0298 /* Cao Guia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,11 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				163982C918460D7700D0AE63 /* facebook.png */,
-				B9B2909217F4655500DEB3E5 /* Icon-Small.png */,
-				B9B2909317F4655500DEB3E5 /* Icon-Small@2x.png */,
-				B9B2909417F4655500DEB3E5 /* Icon.png */,
-				B9B2909517F4655500DEB3E5 /* Icon@2x.png */,
-				B9B2908E17F4645C00DEB3E5 /* kluginArtWork.png */,
 				B99FBCF317EE93ED00D902B4 /* blueButton.png */,
 				B99FBCF417EE93ED00D902B4 /* blueButton@2x.png */,
 				B99FBCF517EE93ED00D902B4 /* blueButtonHighlight.png */,
@@ -218,7 +203,7 @@
 			);
 			name = "Cao Guia";
 			productName = "klug in";
-			productReference = B99EF99A17E16A1400BB0298 /* klugin.app */;
+			productReference = B99EF99A17E16A1400BB0298 /* Cao Guia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -273,8 +258,6 @@
 				B99FBCF717EE93ED00D902B4 /* blueButton.png in Resources */,
 				B99FBCFA17EE93ED00D902B4 /* blueButtonHighlight@2x.png in Resources */,
 				163982CA18460D7700D0AE63 /* facebook.png in Resources */,
-				B99EF9B617E16A1500BB0298 /* Default-568h@2x.png in Resources */,
-				B9B2909617F4655500DEB3E5 /* Icon-Small.png in Resources */,
 				B99FBCF917EE93ED00D902B4 /* blueButtonHighlight.png in Resources */,
 				B99EF9B917E16A1500BB0298 /* MainStoryboard.storyboard in Resources */,
 				B9B2908117F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx in Resources */,
@@ -390,10 +373,10 @@
 					/Users/jader/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "klug in/klug in-Prefix.pch";
-				INFOPLIST_FILE = "klug in/klug in-Info.plist";
+				GCC_PREFIX_HEADER = "klug in/Cao Guia-Prefix.pch";
+				INFOPLIST_FILE = "Klug in/Cao Guia-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = klugin;
+				PRODUCT_NAME = "Cao Guia";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -410,10 +393,10 @@
 					/Users/jader/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "klug in/klug in-Prefix.pch";
-				INFOPLIST_FILE = "klug in/klug in-Info.plist";
+				GCC_PREFIX_HEADER = "klug in/Cao Guia-Prefix.pch";
+				INFOPLIST_FILE = "Klug in/Cao Guia-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = klugin;
+				PRODUCT_NAME = "Cao Guia";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
