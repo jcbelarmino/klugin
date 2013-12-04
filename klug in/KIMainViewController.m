@@ -20,6 +20,9 @@
     CLLocationManager *locationManager;
 
 }
+@property (strong, nonatomic) IBOutlet FBProfilePictureView *userProfileImage;
+@property (strong, nonatomic) IBOutlet UILabel *userNameLabel;
+
 @property (weak, nonatomic) IBOutlet UIPickerView *seletorDeRotas;
 @property (weak, nonatomic) IBOutlet UIButton *botaoIniciarRota;
 @property (weak, nonatomic) IBOutlet UIButton *botaoAtualizarRotas;
@@ -61,6 +64,13 @@
     return _activityView;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (FBSession.activeSession.isOpen) {
+        [self populateUserDetails];
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -90,7 +100,16 @@
         [self atualizaRotas];
         [self.seletorDeRotas reloadAllComponents];
     }
-
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(sessionStateChanged:)
+     name:KISessionStateChangedNotification
+     object:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@"Logout"
+                                              style:UIBarButtonItemStyleBordered
+                                              target:self
+                                              action:@selector(logoutButtonWasPressed:)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,7 +136,12 @@
     [self.botaoAtualizarRotas setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     
 }
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)sessionStateChanged:(NSNotification*)notification {
+    [self populateUserDetails];
+}
 - (IBAction)iniciarRota:(UIButton *)sender {
     
     int index = [self.seletorDeRotas selectedRowInComponent:0];
@@ -172,19 +196,24 @@
     [self.activityView startAnimating];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *urlString= [NSString stringWithFormat:@"http://klugin-jcb.rhcloud.com/rest/rotas"];
         
+        NSString *urlString= [NSString stringWithFormat:@"http://klugin-jcb.rhcloud.com/rest/rotas"];
+        if (self.userProfileImage.profileID) {
+            //web service com usuario
+            urlString = [NSString stringWithFormat:@"http://klugin-jcb.rhcloud.com/rest/rotas/user/%@", self.userProfileImage.profileID];
+        }
+        NSLog(@"URL Rotas %@", urlString);
         NSURL *url = [NSURL URLWithString:urlString];
         NSData *data = [NSData dataWithContentsOfURL:url];
         if (data){
             NSError *error;
             NSArray *jsonResultSetArray = (NSArray*)[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            
+            [self limpaTodasRotas];
             for (NSDictionary *rota in jsonResultSetArray){
                 
                 // Testa se a rota já existe e, caso exista, deleta antes (atualizar).
-                [self limpaRotaExistente:rota];
-                
+                //[self limpaRotaExistente:rota];
+               
                 // Salva a rota lida
                 Rota *rotaSalva = [self salvaRota:rota];
                 
@@ -349,6 +378,29 @@
     }
     
 }
+-(void)limpaTodasRotas
+{
+    
+    NSFetchRequest *consulta = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entidade = [NSEntityDescription entityForName:@"Rota" inManagedObjectContext:self.managedObjectContext];
+    
+    [consulta setEntity:entidade];
+    
+    NSError *erro;
+    
+    NSArray *resultados = [self.managedObjectContext executeFetchRequest:consulta error:
+                           &erro];
+    
+    if ( (resultados != nil) && (resultados.count > 0) ) {
+        for (int i =0; i<resultados.count; i++) {
+            [self.managedObjectContext deleteObject:resultados[i]];
+            [self.managedObjectContext save:&erro];
+        }
+       
+    }
+    
+}
 
 
 -(Rota *)salvaRota:(NSDictionary *)novaRota
@@ -471,5 +523,22 @@
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent: (NSInteger)component{
 }
 
+- (void)populateUserDetails
+{
+    if (FBSession.activeSession.isOpen) {
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection,
+           NSDictionary<FBGraphUser> *user,
+           NSError *error) {
+             if (!error) {
+                 self.userNameLabel.text = user.name;
+                 self.userProfileImage.profileID = user.id;
+             }
+         }];
+    }
+}
+-(void)logoutButtonWasPressed:(id)sender {
+    [FBSession.activeSession closeAndClearTokenInformation];
+}
 
 @end

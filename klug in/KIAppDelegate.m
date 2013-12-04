@@ -18,7 +18,8 @@
 
 @end
 @implementation KIAppDelegate
-
+NSString *const KISessionStateChangedNotification =
+@"br.com.velum.caoguia:KISessionStateChangedNotification";
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -26,6 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [FBProfilePictureView class];
     // Override point for customization after application launch.
     KIMainViewController *controller = (KIMainViewController *)self.window.rootViewController;
     controller.managedObjectContext = self.managedObjectContext;
@@ -36,8 +38,7 @@
     
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
-    
-    // See if the app has a valid token for the current state.
+     // See if the app has a valid token for the current state.
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
        [self openSession];
     } else {
@@ -95,6 +96,9 @@
     }
     
     if (error) {
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:KISessionStateChangedNotification
+         object:session];
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Error"
                                   message:error.localizedDescription
