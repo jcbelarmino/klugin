@@ -45,6 +45,19 @@
 		161E20F31844363F00E41214 /* KILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KILoginViewController.h; sourceTree = "<group>"; };
 		161E20F41844363F00E41214 /* KILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KILoginViewController.m; sourceTree = "<group>"; };
 		163982C918460D7700D0AE63 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		16614F811856433300625FC0 /* CaoGuiaIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CaoGuiaIcon.png; sourceTree = "<group>"; };
+		16614F821856433300625FC0 /* CaoGuiaIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CaoGuiaIcon@2x.png"; sourceTree = "<group>"; };
+		16614F831856433300625FC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		16614F841856433300625FC0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		16614F851856433300625FC0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		16614F861856433300625FC0 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		16614F871856433300625FC0 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		16614F881856433300625FC0 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		16614F891856433300625FC0 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		16614F8A1856433300625FC0 /* Icon-Spotlight-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40.png"; sourceTree = "<group>"; };
+		16614F8B1856433300625FC0 /* Icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@2x.png"; sourceTree = "<group>"; };
+		16614F8C1856433300625FC0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		16614F8D1856433300625FC0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		16F0C7CA180CDDF70021B702 /* Rota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rota.h; sourceTree = "<group>"; };
 		16F0C7CB180CDDF70021B702 /* Rota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rota.m; sourceTree = "<group>"; };
 		16F0C7D0180CDF970021B702 /* PontoRota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PontoRota.h; sourceTree = "<group>"; };
@@ -164,6 +177,19 @@
 		B99EF9A617E16A1400BB0298 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16614F811856433300625FC0 /* CaoGuiaIcon.png */,
+				16614F821856433300625FC0 /* CaoGuiaIcon@2x.png */,
+				16614F831856433300625FC0 /* Default-568h@2x.png */,
+				16614F841856433300625FC0 /* Default.png */,
+				16614F851856433300625FC0 /* Default@2x.png */,
+				16614F861856433300625FC0 /* Icon-76.png */,
+				16614F871856433300625FC0 /* Icon-76@2x.png */,
+				16614F881856433300625FC0 /* Icon-Small.png */,
+				16614F891856433300625FC0 /* Icon-Small@2x.png */,
+				16614F8A1856433300625FC0 /* Icon-Spotlight-40.png */,
+				16614F8B1856433300625FC0 /* Icon-Spotlight-40@2x.png */,
+				16614F8C1856433300625FC0 /* Icon.png */,
+				16614F8D1856433300625FC0 /* Icon@2x.png */,
 				163982C918460D7700D0AE63 /* facebook.png */,
 				B99FBCF317EE93ED00D902B4 /* blueButton.png */,
 				B99FBCF417EE93ED00D902B4 /* blueButton@2x.png */,
