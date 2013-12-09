@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (strong, nonatomic) AVSpeechSynthesizer *sintetizador;
+
 @property (nonatomic, strong) NSMutableDictionary *pontosNotificadosAbaixo15;
 @property (nonatomic, strong) NSMutableDictionary *pontosNotificados40para15;
 @property (nonatomic, strong) NSMutableDictionary *pontosNotificados65para40;
