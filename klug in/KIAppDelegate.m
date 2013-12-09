@@ -46,6 +46,14 @@ NSString *const KISessionStateChangedNotification =
         [self showLoginView];
     }
     
+    // Configurando o modo de processamento de audio em background
+    NSError *error = NULL;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+    if(error) {
+        // Do some error handling
+    }
+
     return YES;
 }
 //Start facebook code

@@ -8,6 +8,7 @@
 
 #import <CoreData/CoreData.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface KIMainViewController : UIViewController
 
