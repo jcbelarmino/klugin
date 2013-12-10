@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		161E20F21844345C00E41214 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161E20F11844345C00E41214 /* FacebookSDK.framework */; };
-		161E20F51844363F00E41214 /* KILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161E20F41844363F00E41214 /* KILoginViewController.m */; };
-		163982CA18460D7700D0AE63 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 163982C918460D7700D0AE63 /* facebook.png */; };
+		1672E0CD18575729005A3113 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1672E0CC18575729005A3113 /* FacebookSDK.framework */; };
 		16F0C7CC180CDDF70021B702 /* Rota.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F0C7CB180CDDF70021B702 /* Rota.m */; };
 		16F0C7D2180CDF970021B702 /* PontoRota.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F0C7D1180CDF970021B702 /* PontoRota.m */; };
 		B95FA00D1820949E00905522 /* CaoGuiaIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA00B1820949E00905522 /* CaoGuiaIcon.png */; };
@@ -19,7 +17,12 @@
 		B95FA019182096F900905522 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA013182096F900905522 /* Icon-76.png */; };
 		B95FA01A182096F900905522 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA014182096F900905522 /* Icon-76@2x.png */; };
 		B95FA01B182096F900905522 /* Icon-Spotlight-40.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA015182096F900905522 /* Icon-Spotlight-40.png */; };
+		B95FA01C182096F900905522 /* Icon-Spotlight-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA016182096F900905522 /* Icon-Spotlight-40@2x.png */; };
+		B95FA0211820977400905522 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA01F1820977400905522 /* Icon.png */; };
 		B95FA0221820977400905522 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA0201820977400905522 /* Icon@2x.png */; };
+		B95FA02C1820991C00905522 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA0291820991B00905522 /* Default-568h@2x.png */; };
+		B95FA02D1820991C00905522 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA02A1820991C00905522 /* Default.png */; };
+		B95FA02E1820991C00905522 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FA02B1820991C00905522 /* Default@2x.png */; };
 		B99C217917F2858B0099105B /* Ordenador.m in Sources */ = {isa = PBXBuildFile; fileRef = B99C217817F2858B0099105B /* Ordenador.m */; };
 		B99EF99E17E16A1400BB0298 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99EF99D17E16A1400BB0298 /* UIKit.framework */; };
 		B99EF9A017E16A1400BB0298 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99EF99F17E16A1400BB0298 /* Foundation.framework */; };
@@ -37,27 +40,10 @@
 		B99FBCF917EE93ED00D902B4 /* blueButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = B99FBCF517EE93ED00D902B4 /* blueButtonHighlight.png */; };
 		B99FBCFA17EE93ED00D902B4 /* blueButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B99FBCF617EE93ED00D902B4 /* blueButtonHighlight@2x.png */; };
 		B9B2908117F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B9B2908017F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx */; };
-		B9FC98E81840002B00E067D5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FC98E71840002B00E067D5 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		161E20F11844345C00E41214 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		161E20F31844363F00E41214 /* KILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KILoginViewController.h; sourceTree = "<group>"; };
-		161E20F41844363F00E41214 /* KILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KILoginViewController.m; sourceTree = "<group>"; };
-		163982C918460D7700D0AE63 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		16614F811856433300625FC0 /* CaoGuiaIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CaoGuiaIcon.png; sourceTree = "<group>"; };
-		16614F821856433300625FC0 /* CaoGuiaIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CaoGuiaIcon@2x.png"; sourceTree = "<group>"; };
-		16614F831856433300625FC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		16614F841856433300625FC0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		16614F851856433300625FC0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		16614F861856433300625FC0 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
-		16614F871856433300625FC0 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
-		16614F881856433300625FC0 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		16614F891856433300625FC0 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		16614F8A1856433300625FC0 /* Icon-Spotlight-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40.png"; sourceTree = "<group>"; };
-		16614F8B1856433300625FC0 /* Icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@2x.png"; sourceTree = "<group>"; };
-		16614F8C1856433300625FC0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		16614F8D1856433300625FC0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		1672E0CC18575729005A3113 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		16F0C7CA180CDDF70021B702 /* Rota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rota.h; sourceTree = "<group>"; };
 		16F0C7CB180CDDF70021B702 /* Rota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rota.m; sourceTree = "<group>"; };
 		16F0C7D0180CDF970021B702 /* PontoRota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PontoRota.h; sourceTree = "<group>"; };
@@ -69,11 +55,16 @@
 		B95FA013182096F900905522 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		B95FA014182096F900905522 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		B95FA015182096F900905522 /* Icon-Spotlight-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40.png"; sourceTree = "<group>"; };
+		B95FA016182096F900905522 /* Icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@2x.png"; sourceTree = "<group>"; };
+		B95FA01F1820977400905522 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B95FA0201820977400905522 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		B95FA0291820991B00905522 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B95FA02A1820991C00905522 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B95FA02B1820991C00905522 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B99AF54017EF3C9E004E8E16 /* Constantes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
 		B99C217717F2858B0099105B /* Ordenador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ordenador.h; sourceTree = "<group>"; };
 		B99C217817F2858B0099105B /* Ordenador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ordenador.m; sourceTree = "<group>"; };
-		B99EF99A17E16A1400BB0298 /* Cao Guia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cao Guia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B99EF99A17E16A1400BB0298 /* klugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = klugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99EF99D17E16A1400BB0298 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B99EF99F17E16A1400BB0298 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B99EF9A117E16A1400BB0298 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,7 +85,6 @@
 		B99FBCF517EE93ED00D902B4 /* blueButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonHighlight.png; sourceTree = "<group>"; };
 		B99FBCF617EE93ED00D902B4 /* blueButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		B9B2908017F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rota_simulada_casa_trt21.gpx; sourceTree = "<group>"; };
-		B9FC98E71840002B00E067D5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,13 +92,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9FC98E81840002B00E067D5 /* AVFoundation.framework in Frameworks */,
 				B99FBCF217EE908600D902B4 /* CoreLocation.framework in Frameworks */,
 				B99EF99E17E16A1400BB0298 /* UIKit.framework in Frameworks */,
 				B99EF9A017E16A1400BB0298 /* Foundation.framework in Frameworks */,
 				B99EF9A217E16A1400BB0298 /* CoreGraphics.framework in Frameworks */,
 				B99EF9A417E16A1400BB0298 /* CoreData.framework in Frameworks */,
-				161E20F21844345C00E41214 /* FacebookSDK.framework in Frameworks */,
+				1672E0CD18575729005A3113 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +127,7 @@
 		B99EF99B17E16A1400BB0298 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B99EF99A17E16A1400BB0298 /* Cao Guia.app */,
+				B99EF99A17E16A1400BB0298 /* klugin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +135,7 @@
 		B99EF99C17E16A1400BB0298 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				161E20F11844345C00E41214 /* FacebookSDK.framework */,
+				1672E0CC18575729005A3113 /* FacebookSDK.framework */,
 				B99FBCF117EE908600D902B4 /* CoreLocation.framework */,
 				B99EF99D17E16A1400BB0298 /* UIKit.framework */,
 				B99EF99F17E16A1400BB0298 /* Foundation.framework */,
@@ -166,8 +155,6 @@
 				B99EF9B717E16A1500BB0298 /* MainStoryboard.storyboard */,
 				B99EF9BD17E16A1500BB0298 /* KIMainViewController.h */,
 				B99EF9BE17E16A1500BB0298 /* KIMainViewController.m */,
-				161E20F31844363F00E41214 /* KILoginViewController.h */,
-				161E20F41844363F00E41214 /* KILoginViewController.m */,
 				B99EF9A617E16A1400BB0298 /* Supporting Files */,
 			);
 			name = "Cao Guia";
@@ -177,20 +164,19 @@
 		B99EF9A617E16A1400BB0298 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				16614F811856433300625FC0 /* CaoGuiaIcon.png */,
-				16614F821856433300625FC0 /* CaoGuiaIcon@2x.png */,
-				16614F831856433300625FC0 /* Default-568h@2x.png */,
-				16614F841856433300625FC0 /* Default.png */,
-				16614F851856433300625FC0 /* Default@2x.png */,
-				16614F861856433300625FC0 /* Icon-76.png */,
-				16614F871856433300625FC0 /* Icon-76@2x.png */,
-				16614F881856433300625FC0 /* Icon-Small.png */,
-				16614F891856433300625FC0 /* Icon-Small@2x.png */,
-				16614F8A1856433300625FC0 /* Icon-Spotlight-40.png */,
-				16614F8B1856433300625FC0 /* Icon-Spotlight-40@2x.png */,
-				16614F8C1856433300625FC0 /* Icon.png */,
-				16614F8D1856433300625FC0 /* Icon@2x.png */,
-				163982C918460D7700D0AE63 /* facebook.png */,
+				B95FA0291820991B00905522 /* Default-568h@2x.png */,
+				B95FA02A1820991C00905522 /* Default.png */,
+				B95FA02B1820991C00905522 /* Default@2x.png */,
+				B95FA01F1820977400905522 /* Icon.png */,
+				B95FA0201820977400905522 /* Icon@2x.png */,
+				B95FA013182096F900905522 /* Icon-76.png */,
+				B95FA014182096F900905522 /* Icon-76@2x.png */,
+				B95FA015182096F900905522 /* Icon-Spotlight-40.png */,
+				B95FA016182096F900905522 /* Icon-Spotlight-40@2x.png */,
+				B95FA0111820969B00905522 /* Icon-Small@2x.png */,
+				B95FA00F1820963300905522 /* Icon-Small.png */,
+				B95FA00B1820949E00905522 /* CaoGuiaIcon.png */,
+				B95FA00C1820949E00905522 /* CaoGuiaIcon@2x.png */,
 				B99FBCF317EE93ED00D902B4 /* blueButton.png */,
 				B99FBCF417EE93ED00D902B4 /* blueButton@2x.png */,
 				B99FBCF517EE93ED00D902B4 /* blueButtonHighlight.png */,
@@ -232,7 +218,7 @@
 			);
 			name = "Cao Guia";
 			productName = "klug in";
-			productReference = B99EF99A17E16A1400BB0298 /* Cao Guia.app */;
+			productReference = B99EF99A17E16A1400BB0298 /* klugin.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -246,10 +232,10 @@
 				ORGANIZATIONNAME = Velum;
 				TargetAttributes = {
 					B99EF99917E16A1400BB0298 = {
-						DevelopmentTeam = HYE4W89SYU;
+						DevelopmentTeam = G38QVLQ642;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -286,7 +272,11 @@
 				B99FBCF817EE93ED00D902B4 /* blueButton@2x.png in Resources */,
 				B99FBCF717EE93ED00D902B4 /* blueButton.png in Resources */,
 				B99FBCFA17EE93ED00D902B4 /* blueButtonHighlight@2x.png in Resources */,
-				163982CA18460D7700D0AE63 /* facebook.png in Resources */,
+				B95FA0211820977400905522 /* Icon.png in Resources */,
+				B95FA01C182096F900905522 /* Icon-Spotlight-40@2x.png in Resources */,
+				B95FA02D1820991C00905522 /* Default.png in Resources */,
+				B95FA02E1820991C00905522 /* Default@2x.png in Resources */,
+				B95FA02C1820991C00905522 /* Default-568h@2x.png in Resources */,
 				B99FBCF917EE93ED00D902B4 /* blueButtonHighlight.png in Resources */,
 				B99EF9B917E16A1500BB0298 /* MainStoryboard.storyboard in Resources */,
 				B9B2908117F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx in Resources */,
@@ -309,7 +299,6 @@
 				B99EF9B017E16A1500BB0298 /* KIAppDelegate.m in Sources */,
 				16F0C7CC180CDDF70021B702 /* Rota.m in Sources */,
 				B99EF9BC17E16A1500BB0298 /* klug_in.xcdatamodeld in Sources */,
-				161E20F51844363F00E41214 /* KILoginViewController.m in Sources */,
 				B99EF9BF17E16A1500BB0298 /* KIMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,11 +392,10 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "klug in/Cao Guia-Prefix.pch";
-				INFOPLIST_FILE = "Klug in/Cao Guia-info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "Cao Guia";
+				INFOPLIST_FILE = "klug in/Cao Guia-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = klugin;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -416,18 +404,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jader/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "klug in/Cao Guia-Prefix.pch";
-				INFOPLIST_FILE = "Klug in/Cao Guia-info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "Cao Guia";
+				INFOPLIST_FILE = "klug in/Cao Guia-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = klugin;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
