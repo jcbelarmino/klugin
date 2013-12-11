@@ -36,6 +36,7 @@
 @property (strong, nonatomic) PontoRota *penultimaParada;
 @property (strong, nonatomic) UIActivityIndicatorView *activityView;
 @property BOOL penultimaParadaNotificada;
+@property BOOL *clicado;
 
 @end
 
@@ -66,10 +67,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    self.userNameLabel.text = @"";
+    //Detalhes do facebook
     if (FBSession.activeSession.isOpen) {
         [self populateUserDetails];
     }
+    
 }
 
 - (void)viewDidLoad
@@ -85,10 +88,11 @@
     [locationManager startUpdatingLocation];
     
     self.sintetizador = [[AVSpeechSynthesizer alloc] init];
-    
-    [self customizarBotoes];
+    self.clicado = FALSE;
+    [self customizarBotoes: self.clicado];
     
     self.lbInformacoes.hidden = YES;
+    
     
     // Verificar se a base de rotas está vazia e carregar do servidor
     NSError *error;
@@ -140,20 +144,36 @@
 
 #pragma mark - Botoes
 
-- (void) customizarBotoes
+- (void) customizarBotoes: (BOOL *)clicado
 {
-    UIImage *buttonImage = [[UIImage imageNamed:@"blueButton.png"]
+    UIImage *buttonImage = [[UIImage imageNamed:@"BTN iniciar rota bkg.png"]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
-    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"blueButtonHighlight.png"]
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"BTN iniciar rota apertado.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    if(clicado){
+       buttonImage = [[UIImage imageNamed:@"BTN parar rota bkg.png"]
+                                resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+       buttonImageHighlight = [[UIImage imageNamed:@"BTN parar rota apertado.png"]
+                                         resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+
+    }
+    
+    UIImage *buttonImageRotas = [[UIImage imageNamed:@"blueButton.png"]
+                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    UIImage *buttonImageHighlightRotas = [[UIImage imageNamed:@"blueButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     
     
+    //ajusted do botao
+ 
+    //[self.botaoIniciarRota setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.0]];
+
     
     [self.botaoIniciarRota setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self.botaoIniciarRota setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     
-    [self.botaoAtualizarRotas setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [self.botaoAtualizarRotas setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [self.botaoAtualizarRotas setBackgroundImage:buttonImageRotas forState:UIControlStateNormal];
+    [self.botaoAtualizarRotas setBackgroundImage:buttonImageHighlightRotas forState:UIControlStateHighlighted];
     
 }
 - (void)dealloc{
@@ -164,6 +184,9 @@
 }
 - (IBAction)iniciarRota:(UIButton *)sender {
     
+    self.clicado = (!self.clicado);
+    
+    [self customizarBotoes: self.clicado];
     int index = [self.seletorDeRotas selectedRowInComponent:0];
     
     self.seletorDeRotas.hidden = !self.seletorDeRotas.hidden;
@@ -174,6 +197,7 @@
         abort();
     }
 
+    
     Rota *rotaSelecionada = [[self.fetchedResultsController fetchedObjects] objectAtIndex:index] ;
     self.lbInformacoes.text = [NSString stringWithFormat:@"Rota de %@ para %@",rotaSelecionada.origem, rotaSelecionada.destino ];
     self.pontosDaRota = [Ordenador ordenaPontos:rotaSelecionada.pontosDaRota];

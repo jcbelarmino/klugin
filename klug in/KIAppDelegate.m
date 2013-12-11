@@ -28,6 +28,7 @@ NSString *const KISessionStateChangedNotification =
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [FBProfilePictureView class];
+    NSLog(@"Bundle ID: %@",[[NSBundle mainBundle] bundleIdentifier]);
     // Override point for customization after application launch.
     KIMainViewController *controller = (KIMainViewController *)self.window.rootViewController;
     controller.managedObjectContext = self.managedObjectContext;
@@ -37,14 +38,17 @@ NSString *const KISessionStateChangedNotification =
                           initWithRootViewController:self.mainViewController];
     
     self.window.rootViewController = self.navController;
-    [self.window makeKeyAndVisible];
-     // See if the app has a valid token for the current state.
+    
+    // See if the app has a valid token for the current state.
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-       [self openSession];
+       
+        [self openSession];
+         [self.window makeKeyAndVisible];
     } else {
         // No, display the login page.
+        [self.window makeKeyAndVisible];
         [self showLoginView];
-    }
+           }
     
     // Configurando o modo de processamento de audio em background
     NSError *error = NULL;
@@ -61,7 +65,7 @@ NSString *const KISessionStateChangedNotification =
 - (void)showLoginView
 {
     UIViewController *topViewController = [self.navController topViewController];
-    UIViewController *modalViewController = [topViewController modalViewController];
+    UIViewController *modalViewController = [topViewController presentedViewController ];
 
      if (![modalViewController isKindOfClass:[KILoginViewController class]]) {
          UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"MainStoryboard"
@@ -83,9 +87,12 @@ NSString *const KISessionStateChangedNotification =
         case FBSessionStateOpen: {
             UIViewController *topViewController =
             [self.navController topViewController];
-            if ([[topViewController modalViewController]
+            if ([[topViewController presentedViewController]
                  isKindOfClass:[KILoginViewController class]]) {
-                [topViewController dismissModalViewControllerAnimated:YES];
+                [topViewController dismissViewControllerAnimated:YES
+                                                      completion: ^{
+                                                            NSLog(@"Dismiss completed");
+                                                      }];
             }
         }
             break;

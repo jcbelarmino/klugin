@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165E65171857FA4F001BD3F8 /* BTN iniciar rota apertado.png in Resources */ = {isa = PBXBuildFile; fileRef = 165E65141857FA4F001BD3F8 /* BTN iniciar rota apertado.png */; };
+		165E65181857FA4F001BD3F8 /* BTN parar rota apertado.png in Resources */ = {isa = PBXBuildFile; fileRef = 165E65151857FA4F001BD3F8 /* BTN parar rota apertado.png */; };
+		165E65191857FA4F001BD3F8 /* BTN parar rota bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = 165E65161857FA4F001BD3F8 /* BTN parar rota bkg.png */; };
+		1662F7271857AF4100E4A011 /* BTN parar rota.png in Resources */ = {isa = PBXBuildFile; fileRef = 1662F7251857AF4100E4A011 /* BTN parar rota.png */; };
+		1662F7281857AF4100E4A011 /* BTN iniciar rota.png in Resources */ = {isa = PBXBuildFile; fileRef = 1662F7261857AF4100E4A011 /* BTN iniciar rota.png */; };
+		1662F72A1857B13D00E4A011 /* BTN iniciar rota bkg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1662F7291857B13D00E4A011 /* BTN iniciar rota bkg.png */; };
 		166739391857622800C7BDA8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166739381857622800C7BDA8 /* AVFoundation.framework */; };
 		1667393D185762AA00C7BDA8 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1667393A185762AA00C7BDA8 /* facebook.png */; };
 		1667393E185762AA00C7BDA8 /* KILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1667393C185762AA00C7BDA8 /* KILoginViewController.m */; };
@@ -46,6 +52,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165E65141857FA4F001BD3F8 /* BTN iniciar rota apertado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN iniciar rota apertado.png"; sourceTree = "<group>"; };
+		165E65151857FA4F001BD3F8 /* BTN parar rota apertado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN parar rota apertado.png"; sourceTree = "<group>"; };
+		165E65161857FA4F001BD3F8 /* BTN parar rota bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN parar rota bkg.png"; sourceTree = "<group>"; };
+		1662F7251857AF4100E4A011 /* BTN parar rota.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN parar rota.png"; sourceTree = "<group>"; };
+		1662F7261857AF4100E4A011 /* BTN iniciar rota.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN iniciar rota.png"; sourceTree = "<group>"; };
+		1662F7291857B13D00E4A011 /* BTN iniciar rota bkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BTN iniciar rota bkg.png"; sourceTree = "<group>"; };
 		166739381857622800C7BDA8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1667393A185762AA00C7BDA8 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		1667393B185762AA00C7BDA8 /* KILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KILoginViewController.h; sourceTree = "<group>"; };
@@ -175,6 +187,12 @@
 		B99EF9A617E16A1400BB0298 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1662F7291857B13D00E4A011 /* BTN iniciar rota bkg.png */,
+				1662F7251857AF4100E4A011 /* BTN parar rota.png */,
+				165E65141857FA4F001BD3F8 /* BTN iniciar rota apertado.png */,
+				165E65151857FA4F001BD3F8 /* BTN parar rota apertado.png */,
+				165E65161857FA4F001BD3F8 /* BTN parar rota bkg.png */,
+				1662F7261857AF4100E4A011 /* BTN iniciar rota.png */,
 				1667393A185762AA00C7BDA8 /* facebook.png */,
 				B95FA0291820991B00905522 /* Default-568h@2x.png */,
 				B95FA02A1820991C00905522 /* Default.png */,
@@ -285,17 +303,23 @@
 				B99FBCF717EE93ED00D902B4 /* blueButton.png in Resources */,
 				B99FBCFA17EE93ED00D902B4 /* blueButtonHighlight@2x.png in Resources */,
 				B95FA0211820977400905522 /* Icon.png in Resources */,
+				165E65191857FA4F001BD3F8 /* BTN parar rota bkg.png in Resources */,
 				1667393D185762AA00C7BDA8 /* facebook.png in Resources */,
 				B95FA01C182096F900905522 /* Icon-Spotlight-40@2x.png in Resources */,
 				B95FA02D1820991C00905522 /* Default.png in Resources */,
 				B95FA02E1820991C00905522 /* Default@2x.png in Resources */,
 				B95FA02C1820991C00905522 /* Default-568h@2x.png in Resources */,
+				1662F7271857AF4100E4A011 /* BTN parar rota.png in Resources */,
+				1662F72A1857B13D00E4A011 /* BTN iniciar rota bkg.png in Resources */,
 				B99FBCF917EE93ED00D902B4 /* blueButtonHighlight.png in Resources */,
 				B99EF9B917E16A1500BB0298 /* MainStoryboard.storyboard in Resources */,
 				B9B2908117F45C9B00DEB3E5 /* rota_simulada_casa_trt21.gpx in Resources */,
+				165E65181857FA4F001BD3F8 /* BTN parar rota apertado.png in Resources */,
 				B95FA01A182096F900905522 /* Icon-76@2x.png in Resources */,
 				B95FA01B182096F900905522 /* Icon-Spotlight-40.png in Resources */,
+				1662F7281857AF4100E4A011 /* BTN iniciar rota.png in Resources */,
 				B95FA0121820969B00905522 /* Icon-Small@2x.png in Resources */,
+				165E65171857FA4F001BD3F8 /* BTN iniciar rota apertado.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
